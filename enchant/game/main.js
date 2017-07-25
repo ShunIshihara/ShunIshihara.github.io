@@ -1,7 +1,7 @@
 enchant();
 
 var time = new Label();		// 計測タイム
-var myHp = 0;
+var myHp = 0;			// charaのHP
 var windowSize = {x:640, y:640}
 
 window.onload = function() {
@@ -9,7 +9,7 @@ window.onload = function() {
     game.fps = 30;                 // ゲームの進行スピードを設定
     game.preload('img/chara.png', 'img/map1.png', 'img/gameover.png', 'img/clear.png', 'img/planet.png', 'img/effect0.png', 'img/icon0.png', 'img/map0.png');
     game.keybind(90, 'z');
-    game.onload = function() {     // ゲームの準備が整ったらメインの処理を実行します
+    game.onload = function() {     
 	
         /**
          * タイトルシーンを作り、返す関数
@@ -19,36 +19,36 @@ window.onload = function() {
 	    var stage = new Sprite(windowSize.x, windowSize.y);
 	    stage.image = game.assets['img/planet.png'];
             scene.addChild(stage);	    
-            var labelTitle = new Label('タイトル！');   // 新しいラベル(文字)を作る
-	    labelTitle.x = 280;
-	    labelTitle.y = 50;
-	    labelTitle.font = "24px cursive";	    
+            var labelTitle = new Label('GO！GO！戦車！');   // 新しいラベル(文字)を作る
+	    labelTitle.x = 200;
+	    labelTitle.y = 100;
+	    labelTitle.font = "32px cursive";	    
 	    labelTitle.color = 'black'
-            scene.addChild(labelTitle);                  // シーンにラベルに追加
+            scene.addChild(labelTitle);                  
 	    var labelrule = new Label('操作方法：矢印で移動！zで弾を撃つ！');
 	    labelrule.x = 180;
 	    labelrule.y = 280;
 	    labelrule.font = "18px cursive";
 	    labelrule.color = 'black'
-            scene.addChild(labelrule);                  // シーンにラベルに追加
+            scene.addChild(labelrule);                  
 	    var labelrule = new Label('敵をなるべく早くすべて倒せ！');
 	    labelrule.x = 180;
 	    labelrule.y = 400;
 	    labelrule.font = "18px cursive";
 	    labelrule.color = 'black'
-            scene.addChild(labelrule);                  // シーンにラベルに追加
+            scene.addChild(labelrule);                  
 	    var labelrule = new Label('クリックでスタート！');
 	    labelrule.x = 180;
 	    labelrule.y = 480;
 	    labelrule.font = "18px cursive";
 	    labelrule.color = 'black'
-            scene.addChild(labelrule);                  // シーンにラベルに追加	    
+            scene.addChild(labelrule);                 	    
 
             scene.addEventListener('touchstart', function(e) { // シーンにタッチイベントを設定
-                //現在表示しているシーンをゲームシーンに置き換えます
+                //現在表示しているシーンをゲームシーンに置き換える
                 game.pushScene(createGameScene());
             });
-            // この関数内で作ったシーンを呼び出し元に返します(return)
+            // この関数内で作ったシーンを呼び出し元に返す(return)
             return scene;
         };
 
@@ -71,77 +71,61 @@ window.onload = function() {
 		cnt1 = j;
 		cnt2 = j + 10;
 		cnt3 = j + 20;
-	    	obstacles[cnt1] = new Obstacle(100 + 16 * j, 200); // 場所だけ指定
-	    	obstacles[cnt2] = new Obstacle(400 + 16 * j, 200); // 場所だけ指定
-	    	obstacles[cnt3] = new Obstacle(250 + 16 * j, 400); // 場所だけ指定		
+	    	obstacles[cnt1] = new Obstacle(100 + 16 * j, 400); // 場所だけ指定
+	    	obstacles[cnt2] = new Obstacle(400 + 16 * j, 400); // 場所だけ指定
+	    	obstacles[cnt3] = new Obstacle(250 + 16 * j, 200); // 場所だけ指定		
 	    }
 
-	    //体力表示
-	    hearts = [];
+	    //キャラの体力表示
+	    myHearts = [];
 	    for(var k = 0; k < 3; k++){
-		hearts[k] = new Heart(550 + 16 * k, 600);
+		myHearts[k] = new Heart(550 + 16 * k, 615);
 	    }
-	    
+
 	    //キャラ生成
             chara = new Sprite(32, 32);
             chara.image = game.assets['img/chara.png'];
             chara.x = 310;
-            chara.y = 600;
+            chara.y = 550;
 	    chara.frame = 18;
             scene.addChild(chara);
-	    var chara_dir = 0, chara_con = 0, count = 0;
 	    
+	    var chara_dir = 0, chara_con = 0, count = 0;
 	    //キャラ操作
 	    chara.on('enterframe', function() {
 		if(myHp <= 0){
-		    scene.removeChild(hearts[2]);
+		    scene.removeChild(myHearts[2]);
 		    game.pushScene(createGameoverScene());
 		}
-		if(myHp == 2) scene.removeChild(hearts[0]);
-		if(myHp == 1) scene.removeChild(hearts[1]);
+		if(myHp == 2) scene.removeChild(myHearts[0]);
+		if(myHp == 1) scene.removeChild(myHearts[1]);
 		chara_con++;
+		
 		//障害物のキャラと弾の当たり判定
 		var x = 0, y = 0;
 		x = this.x;
 		y = this.y;
 	    	if (game.input.left){
-		    this.x -= 5;
+		    this.x -= 4;
 		    this.frame = 6;
 		    chara_dir = 1;
-		    
 		}
 	    	if (game.input.right){
-		    this.x += 5;
+		    this.x += 4;
 		    this.frame = 12;
 		    chara_dir = 2;
 		}		    
 	    	if (game.input.up){
-		    this.y -= 5;
+		    this.y -= 4;
 		    this.frame = 18;
 		    chara_dir = 3;
 		}
 		if (game.input.down){
-		    this.y += 5;
+		    this.y += 4;
 		    this.frame = 0;
 		    chara_dir = 4;
 		}
-		for(var i = 0; i < 30; i++){
-		    if(chara.intersect(obstacles[i])){
-		    	this.x = x;
-		    	this.y = y;
-		    }
-		}
-	    	if(this.y > 605) this.y = 605;
-		if(this.y < 5) this.y = 5;
-	    	if(this.x > 605) this.x = 605;
-		if(this.x < 5) this.x = 5;
-
-		if(chara_con > 30){ // 1秒に1つ弾が出る
-		    if(game.input.z){
-			new Bullet(this.x, this.y, chara_dir, 1);
-			chara_con = 0;
-		    }
-		}
+		
 		//戦車同士の当たり判定
 		count++;
 		if(count > 30){
@@ -153,77 +137,146 @@ window.onload = function() {
 				myHp--;
 			}
 		    }
-		}	
+		}
+		
+		//移動先に障害物があるなら元の座標に戻る
+		for(var i = 0; i < 30; i++){
+		    if(chara.intersect(obstacles[i])){
+		    	this.x = x;
+		    	this.y = y;
+		    }
+		}
+		
+		//移動先に敵戦車があるなら元の座標に戻る
+		for(var j = 0; j < 3; j++){
+		    if(chara.intersect(enemies[j]) && enemies[j].alive == 1){
+		    	this.x = x;
+		    	this.y = y;
+		    }
+		}		
+	    	if(this.y > 580) this.y = 580;
+		if(this.y < 36) this.y = 36;
+	    	if(this.x > 604) this.x = 604;
+		if(this.x < 4) this.x = 4;
 
+		if(chara_con > 30){ // 1秒に1つ弾が出る
+		    if(game.input.z){
+			new Bullet(this.x, this.y, chara_dir, 1);
+			chara_con = 0;
+		    }
+		}
+		//敵をすべて倒したらクリア
+		if(enemies[0].alive == 0 && enemies[1].alive == 0 && enemies[2].alive == 0) game.pushScene(createGameclearScene());
 	    });
-	    
 
+	    //敵の体力表示
+	    // enemy1 = [];
+	    // for(var l = 0; l < 3; l++){
+	    // 	enemy1[l] = new Heart(50 + 16 * l, 20);
+	    // }
+
+	    // enemy2 = [];
+	    // for(var m = 0; m < 3; m++){
+	    // 	enemy2[m] = new Heart(300 + 16 * m, 20);
+	    // }
+
+	    // enemy3 = [];
+	    // for(var n = 0; n < 3; n++){
+	    // 	enemy3[n] = new Heart(550 + 16 * n, 20);
+	    // }	  
+	    
+	    
 	    var enemy_dir = 0;
+	    var enemy_x = 0, enemy_y = 0;
 	    //敵生成クラス
 	    Enemy = Class.create(Sprite, {
 		initialize:function(x, y){
 		    var move = 0, enemy_con = 0;
 		    Sprite.call(this, 32, 32);
 		    this.x = x;
-		    this.y = y;
+		    this.y = y;	    
 		    this.image = game.assets['img/chara.png'];
 		    this.frame = 3;
 		    this.on('enterframe', function(){ // 1秒に一回行動し弾を撃つ
+			enemy_x = this.x;
+			enemy_y = this.y;				
 			enemy_con++;
 			if(move == 0){ // 左
-			    this.x -= 1;
+			    this.x -= 2;
 			    this.frame = 9;
 			    enemy_dir = 1;
 			}
 			if(move == 1){ // 右
-			    this.x += 1;
+			    this.x += 2;
 			    this.frame = 15;
 			    enemy_dir = 2;
 			}
 			if(move == 2){ // 上
-  			    this.y -= 1;
+  			    this.y -= 2;
 			    this.frame = 21;
 			    enemy_dir = 3;
 			}
 			if(move == 3){ // 下
-			    this.y += 1;
+			    this.y += 2;
 			    this.frame = 3;
 			    enemy_dir = 4;
 			}
+			
 			//1秒に1つ敵の弾生成
-			if(enemy_con == 15)new Bullet(this.x, this.y, enemy_dir, 2);
+			if(enemy_con == 15) move = rand(3);
+
+			if(enemy_con == 20) new Bullet(this.x, this.y, enemy_dir, 2);
+			
 			//1秒に1回方向をランダムに変える
 			if(enemy_con == 30){
 			    move = rand(3);
 			    enemy_con = 0;
 			}
+			
+			//移動先に障害物があるなら元の座標に戻る
 			for(var i = 0; i < 30; i++){
-			    if(chara.intersect(obstacles[i])){
-		    		this.x = x;
-		    		this.y = y;
+			    if(enemies[0].intersect(obstacles[i]) || enemies[1].intersect(obstacles[i]) || enemies[2].intersect(obstacles[i])){
+		    		this.x = enemy_x;
+		    		this.y = enemy_y;
 			    }
-			}			
-			if(this.y > 605) this.y = 605; // 画面外へ行かないため
-			if(this.y < 5) this.y = 5;
-	    		if(this.x > 605) this.x = 605;
-			if(this.x < 5) this.x = 5;
+			}
+			
+			//移動先に生存している敵戦車があるなら元の座標に戻る
+			if((enemies[0].intersect(enemies[1]) && enemies[0].alive == 1 && enemies[1].alive == 1) || (enemies[0].intersect(enemies[2]) && enemies[0].alive == 1 && enemies[2].alive == 1) || (enemies[1].intersect(enemies[2]) && enemies[1].alive == 1 && enemies[2].alive == 1)){
+		    		this.x = enemy_x;
+		    		this.y = enemy_y;
+			}
+			
+			//移動先にキャラがいたら元の座標に戻る
+			for(var k = 0; k < 3; k++){
+			    if(enemies[k].intersect(chara) && enemies[k].alive == 1){
+		    		this.x = enemy_x;
+		    		this.y = enemy_y;
+			    }
+			}
+			if(this.y > 580) this.y = 580; // 画面外へ行かないため
+			if(this.y < 36) this.y = 36;
+	    		if(this.x > 604) this.x = 604;
+			if(this.x < 4) this.x = 4;
+			
 			//敵の死ぬ判定
 			for(var j = 0; j < 3; j++){
 			    if(enemies[j].hp == 0){
 				scene.removeChild(enemies[j]);
 				enemies[j].alive = 0; // 死亡
 			    }
-			    //敵をすべて倒したら
-			    if(enemies[0].alive == 0 && enemies[1].alive == 0 && enemies[2].alive == 0) game.pushScene(createGameclearScene());
 			}
 		    });
 		    scene.addChild(this);
 		}
 	    });
+	    
 	    //敵の作成
 	    enemies = [];
+	    enemies[0] = new Enemy(150, 300);
+	    enemies[1] = new Enemy(300, 100);
+	    enemies[2] = new Enemy(450, 300);
 	    for (var i = 0; i < 3; i++){
-	    	enemies[i] = new Enemy(150 * (i + 1), 100);
 		enemies[i].hp = 3;
 		enemies[i].alive = 1; // 1が生きてる 0で死んだ
 	    }
@@ -244,12 +297,6 @@ window.onload = function() {
 	    });
 	    scene.addChild(time);
 
-	    // シーンにタッチイベントを設定
-            // scene.addEventListener('touchstart', function(e) {
-            //     //現在表示しているシーンの上にゲームクリアシーンを重ねて表示します
-            //     game.pushScene(createGameclearScene());
-            // });
-            // この関数内で作ったシーンを呼び出し元に返します(return)
             return scene;
         };
 
@@ -262,7 +309,7 @@ window.onload = function() {
             scene.backgroundColor = 'rgba(0, 0, 0, 0.2)';      // シーンの背景色を設定
             var label = new Label('クリックでタイトルに戻るよ！');      // 新しいラベル(文字)を作る
             label.x = 240;                            // 横位置調整
-	    label.y = 400;                           // 縦位置調整
+	    label.y = 440;                           // 縦位置調整
 	    label.color = 'blue';
             scene.addChild(label);                  // シーンにラベルに追加
 	    var sprite = new Sprite(188, 96);			 // ゲームオーバーの画像
@@ -330,14 +377,15 @@ window.onload = function() {
     game.start(); // ゲームをスタートさせます
 };
 
-//弾生成クラス
+
+//弾生成クラス 敵は1秒に1回呼び出し
 var Bullet = Class.create(Sprite, {
     initialize: function(x, y, dir, type){
 	Sprite.call(this, 16, 16);
 	this.dir = dir;		// onenterframeで使うため
 	this.type = type;
-	var hit = 0;
-	this.hit = hit;
+	this.hit_chara = 0;
+	this.hit_enemy = 0;
 	if(dir == 3){ // 上
 	    this.x = x + 8;
 	    this.y = y - 8;
@@ -370,7 +418,17 @@ var Bullet = Class.create(Sprite, {
 	this.image = game.assets['img/icon0.png'];
 	scene.addChild(this);
     },
-    onenterframe: function(){	// 弾を一定距離で消す
+    onenterframe: function(){
+	//もし弾が障害物や戦車に当たったら弾を消す
+	//障害物
+	for(var j = 0; j < 30; j++){	
+	    if(this.intersect(obstacles[j])){
+		hitEffect(this.x, this.y);
+		scene.removeChild(this);
+	    }
+	}
+
+	//基本的に弾は一定距離進んだら消える
 	if(this.dir == 3){	// 上
     	    this.y -= 10;
 	    if(this.by - this.y >= 100){
@@ -395,19 +453,18 @@ var Bullet = Class.create(Sprite, {
 		scene.removeChild(this);
 	    }
 	}
-	if(this.intersect(chara) && this.hit == 0 && this.type == 2){ // 連続ヒットしないため キャラに弾があたるとき
-	    this.hit++;
+	if(this.intersect(chara) && this.hit_chara == 0 && this.type == 2){ // 連続ヒットしないため キャラに弾があたるとき
+	    this.hit_chara++;
 	    hitEffect(this.x, this.y);
 	    myHp--;
-	    if(this.hit > 30 ) this.hit = 0;
+	    scene.removeChild(this);	    
 	}
 	for(var i = 0; i < 3; i++){
-	    if(this.intersect(enemies[i]) && this.hit == 0 && this.type == 1){ // 連続ヒットしないため 敵に弾が当たるとき
-		this.hit++;
+	    if(this.intersect(enemies[i]) && this.hit_enemy == 0 && this.type == 1 && enemies[i].alive == 1){ // 連続ヒットしないため 敵に弾が当たるとき
+		this.hit_enemy++;
 		hitEffect(this.x, this.y);
 		enemies[i].hp--;
-		console.log(enemies[i].hp);
-		if(this.hit > 30) this.hit = 0;
+		scene.removeChild(this);
 	    }
 	}
     }	
