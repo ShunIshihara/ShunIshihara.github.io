@@ -1,42 +1,43 @@
 enchant();
 
-var time = new Label();		// 計測タイム
-var myHp = 0;			// charaのHP
-var windowSize = {x:640, y:640}
+var time = new Label();		//計測タイム
+var myHp = 0;			//charaのHP
+var windowSize = {x:640, y:640} //表示領域の数値
 
 window.onload = function() {
-    game = new Game(windowSize.x, windowSize.y); // 表示領域の大きさを設定(横，縦)
-    game.fps = 30;                 // ゲームの進行スピードを設定
+    game = new Game(windowSize.x, windowSize.y); //表示領域の大きさを指定(横，縦)
+    game.fps = 30;                 //fpsを指定
     game.preload('img/chara.png', 'img/map1.png', 'img/gameover.png', 'img/clear.png', 'img/planet.png', 'img/effect0.png', 'img/icon0.png', 'img/map0.png');
     game.keybind(90, 'z');
     game.onload = function() {     
-	
-        /**
-         * タイトルシーンを作り、返す関数
-         */
-        var createTitleScene = function() {
-            var scene = new Scene();                // 新しいシーンを作る
+	//タイトルシーン作成関数
+        var createTitleScene = function() {	    
+            var scene = new Scene();                //新しいシーンを作る
 	    var stage = new Sprite(windowSize.x, windowSize.y);
 	    stage.image = game.assets['img/planet.png'];
-            scene.addChild(stage);	    
-            var labelTitle = new Label('GO！GO！戦車！');   // 新しいラベル(文字)を作る
+            scene.addChild(stage);
+	    
+            var labelTitle = new Label('GO！GO！戦車！');   //新しいラベルを作る
 	    labelTitle.x = 200;
 	    labelTitle.y = 100;
 	    labelTitle.font = "32px cursive";	    
 	    labelTitle.color = 'black'
-            scene.addChild(labelTitle);                  
+            scene.addChild(labelTitle);
+            
 	    var labelrule = new Label('操作方法：矢印で移動！zで弾を撃つ！');
 	    labelrule.x = 180;
 	    labelrule.y = 280;
 	    labelrule.font = "18px cursive";
 	    labelrule.color = 'black'
-            scene.addChild(labelrule);                  
+            scene.addChild(labelrule);
+            
 	    var labelrule = new Label('敵をなるべく早くすべて倒せ！');
 	    labelrule.x = 180;
 	    labelrule.y = 400;
 	    labelrule.font = "18px cursive";
 	    labelrule.color = 'black'
-            scene.addChild(labelrule);                  
+            scene.addChild(labelrule);
+	    
 	    var labelrule = new Label('クリックでスタート！');
 	    labelrule.x = 180;
 	    labelrule.y = 480;
@@ -44,20 +45,19 @@ window.onload = function() {
 	    labelrule.color = 'black'
             scene.addChild(labelrule);                 	    
 
-            scene.addEventListener('touchstart', function(e) { // シーンにタッチイベントを設定
+	    //クリックでゲームシーンへ
+            scene.addEventListener('touchstart', function(e) {
                 //現在表示しているシーンをゲームシーンに置き換える
                 game.pushScene(createGameScene());
             });
-            // この関数内で作ったシーンを呼び出し元に返す(return)
+	    
+            //シーンを返す
             return scene;
         };
 
-	
-    	/**
-         * ゲームシーンを作り、返す関数
-         */
+	//ゲームシーン作成関数
         var createGameScene = function() {
-	    myHp = 3;	 // hpの初期化
+	    myHp = 3;	 // キャラhpの初期化
 	    game.frame = 0;	     // 時間の初期化のため
             scene = new Scene();                // 新しいシーンを作る
 	    var stage = new Sprite(windowSize.x, windowSize.y); // 背景の作成
@@ -71,9 +71,9 @@ window.onload = function() {
 		cnt1 = j;
 		cnt2 = j + 10;
 		cnt3 = j + 20;
-	    	obstacles[cnt1] = new Obstacle(100 + 16 * j, 400); // 場所だけ指定
-	    	obstacles[cnt2] = new Obstacle(400 + 16 * j, 400); // 場所だけ指定
-	    	obstacles[cnt3] = new Obstacle(250 + 16 * j, 200); // 場所だけ指定		
+	    	obstacles[cnt1] = new Obstacle(90 + 16 * j, 400); // 場所だけ指定
+	    	obstacles[cnt2] = new Obstacle(390 + 16 * j, 400); // 場所だけ指定
+	    	obstacles[cnt3] = new Obstacle(240 + 16 * j, 200); // 場所だけ指定		
 	    }
 
 	    //キャラの体力表示
@@ -91,8 +91,9 @@ window.onload = function() {
             scene.addChild(chara);
 	    
 	    var chara_dir = 0, chara_con = 0, count = 0;
-	    //キャラ操作
+	    //キャラ操作や各種判定
 	    chara.on('enterframe', function() {
+		//残りHPを表示に反映
 		if(myHp <= 0){
 		    scene.removeChild(myHearts[2]);
 		    game.pushScene(createGameoverScene());
@@ -153,37 +154,41 @@ window.onload = function() {
 		    	this.x = x;
 		    	this.y = y;
 		    }
-		}		
+		}
+
+		//場外に出るのを防ぐ
 	    	if(this.y > 580) this.y = 580;
 		if(this.y < 36) this.y = 36;
 	    	if(this.x > 604) this.x = 604;
 		if(this.x < 4) this.x = 4;
-
-		if(chara_con > 30){ // 1秒に1つ弾が出る
+		
+		// 1秒に1つ弾を出せる
+		if(chara_con > 30){
 		    if(game.input.z){
 			new Bullet(this.x, this.y, chara_dir, 1);
 			chara_con = 0;
 		    }
 		}
-		//敵をすべて倒したらクリア
+		
+		//敵をすべて倒したらクリアシーンへ
 		if(enemies[0].alive == 0 && enemies[1].alive == 0 && enemies[2].alive == 0) game.pushScene(createGameclearScene());
 	    });
 
 	    //敵の体力表示
-	    // enemy1 = [];
-	    // for(var l = 0; l < 3; l++){
-	    // 	enemy1[l] = new Heart(50 + 16 * l, 20);
-	    // }
+	    enemy1 = [];
+	    for(var l = 0; l < 3; l++){
+	    	enemy1[l] = new Heart(50 + 16 * l, 20);
+	    }
 
-	    // enemy2 = [];
-	    // for(var m = 0; m < 3; m++){
-	    // 	enemy2[m] = new Heart(300 + 16 * m, 20);
-	    // }
+	    enemy2 = [];
+	    for(var m = 0; m < 3; m++){
+	    	enemy2[m] = new Heart(300 + 16 * m, 20);
+	    }
 
-	    // enemy3 = [];
-	    // for(var n = 0; n < 3; n++){
-	    // 	enemy3[n] = new Heart(550 + 16 * n, 20);
-	    // }	  
+	    enemy3 = [];
+	    for(var n = 0; n < 3; n++){
+	    	enemy3[n] = new Heart(550 + 16 * n, 20);
+	    }	  
 	    
 	    
 	    var enemy_dir = 0;
@@ -197,9 +202,24 @@ window.onload = function() {
 		    this.y = y;	    
 		    this.image = game.assets['img/chara.png'];
 		    this.frame = 3;
-		    this.on('enterframe', function(){ // 1秒に一回行動し弾を撃つ
+		    //敵の行動や各種判定
+		    this.on('enterframe', function(){
+			//敵HPを表示に反映
+			for(var l = 0; l < 3; l++){
+			    if(enemies[0].hp == l) scene.removeChild(enemy1[2 - l]);
+			}
+			for(var m = 0; m < 3; m++){
+			    if(enemies[1].hp == m) scene.removeChild(enemy2[2 - m]);
+			}
+			for(var n = 0; n < 3; n++){
+			    if(enemies[2].hp == n) scene.removeChild(enemy3[2 - n]);
+			}
+
+			//障害物判定のために現在の座標を保存
 			enemy_x = this.x;
-			enemy_y = this.y;				
+			enemy_y = this.y;
+
+			//敵の移動
 			enemy_con++;
 			if(move == 0){ // 左
 			    this.x -= 2;
@@ -222,13 +242,12 @@ window.onload = function() {
 			    enemy_dir = 4;
 			}
 			
-			//1秒に1つ敵の弾生成
-			if(enemy_con == 15) move = rand(3);
-
-			if(enemy_con == 20) new Bullet(this.x, this.y, enemy_dir, 2);
-			
-			//1秒に1回方向をランダムに変える
-			if(enemy_con == 30){
+			//2秒に3回方向転換と1秒に1回弾を撃つ
+			if(enemy_con == 20) move = rand(3);
+			if(enemy_con == 30) new Bullet(this.x, this.y, enemy_dir, 2);
+			if(enemy_con == 40) move = rand(3);
+			if(enemy_con == 60){
+			    new Bullet(this.x, this.y, enemy_dir, 2);
 			    move = rand(3);
 			    enemy_con = 0;
 			}
@@ -254,7 +273,9 @@ window.onload = function() {
 		    		this.y = enemy_y;
 			    }
 			}
-			if(this.y > 580) this.y = 580; // 画面外へ行かないため
+
+			// 画面外へ行かないため
+			if(this.y > 580) this.y = 580;
 			if(this.y < 36) this.y = 36;
 	    		if(this.x > 604) this.x = 604;
 			if(this.x < 4) this.x = 4;
@@ -267,18 +288,19 @@ window.onload = function() {
 			    }
 			}
 		    });
+		    //敵の表示
 		    scene.addChild(this);
 		}
 	    });
 	    
-	    //敵の作成
+	    //敵の生成、初期位置
 	    enemies = [];
 	    enemies[0] = new Enemy(150, 300);
 	    enemies[1] = new Enemy(300, 100);
 	    enemies[2] = new Enemy(450, 300);
 	    for (var i = 0; i < 3; i++){
 		enemies[i].hp = 3;
-		enemies[i].alive = 1; // 1が生きてる 0で死んだ
+		enemies[i].alive = 1; // 1が生きてる 0で死んでる
 	    }
 
 	    //ランダム関数　0~nまで この関数は外部からの引用
@@ -286,7 +308,7 @@ window.onload = function() {
 		return Math.floor(Math.random() * (n + 1));
 	    }
 	    
-	    //時間表示
+	    //タイムの計算
 	    time.x = 600;
 	    time.y = 5;
 	    time.color = 'blue';
@@ -295,103 +317,103 @@ window.onload = function() {
 	    time.on('enterframe', function() {
 	    	time.text = (game.frame / game.fps).toFixed(1); // toFixedで小数点以下
 	    });
+	    //タイムの表示
 	    scene.addChild(time);
 
+	    //シーンを返す
             return scene;
         };
 
-	
-        /**
-         * ゲームオーバーシーンを作り、返す関数
-         */
+	//ゲームオーバーシーン作成関数
         var createGameoverScene = function() {
-            var scene = new Scene();                // 新しいシーンを作る
-            scene.backgroundColor = 'rgba(0, 0, 0, 0.2)';      // シーンの背景色を設定
-            var label = new Label('クリックでタイトルに戻るよ！');      // 新しいラベル(文字)を作る
-            label.x = 240;                            // 横位置調整
-	    label.y = 440;                           // 縦位置調整
+            var scene = new Scene();                //新しいシーンを作る
+            scene.backgroundColor = 'rgba(0, 0, 0, 0.2)';      //白の半透明を重ねる
+	    
+            var label = new Label('クリックでタイトルに戻るよ！');      //新しいラベルを作る
+            label.x = 240;                            //横位置調整
+	    label.y = 440;                           //縦位置調整
 	    label.color = 'blue';
-            scene.addChild(label);                  // シーンにラベルに追加
-	    var sprite = new Sprite(188, 96);			 // ゲームオーバーの画像
+            scene.addChild(label);                  //シーンにラベルに追加
+	    
+	    var sprite = new Sprite(188, 96);			 //ゲームオーバーの画像
 	    sprite.image = game.assets['img/gameover.png'];
 	    sprite.x = 220;
 	    sprite.y = 240;
 	    scene.addChild(sprite);
-            scene.addEventListener('touchstart', function(e) { // シーンにタッチイベントを設定
-                //現在表示しているシーンを外し、直前のシーンを表示します
+
+	    //クリックしたら2回ポップしタイトルシーンに戻る
+            scene.addEventListener('touchstart', function(e) {
                 game.popScene();
                 game.popScene();		
             });
-            // この関数内で作ったシーンを呼び出し元に返します(return)
+	    
+            //シーンを返す
             return scene;
         };
 
-
-        /**
-         * ゲームクリアシーンを作り、返す関数
-         */
+	//ゲームクリアシーン作成関数
         var createGameclearScene = function() {
             var scene = new Scene();                // 新しいシーンを作る
-            scene.backgroundColor = 'rgba(255, 255, 255, 0.2)';      // シーンの背景色を設定
-            var label = new Label('クリックでタイトルに戻るよ！');      // 新しいラベル(文字)を作る
-            label.x = 250;                            // 横位置調整
-	    label.y = 420;                           // 縦位置調整
+            scene.backgroundColor = 'rgba(255, 255, 255, 0.2)';      //黒の半透明を重ねる
+	    
+            var label = new Label('クリックでタイトルに戻るよ！');      //新しいラベルを作る
+            label.x = 250;                            //横位置調整
+	    label.y = 420;                           //縦位置調整
 	    label.color = 'blue';
-            scene.addChild(label);                  // シーンにラベルに追加
-	    var sprite = new Sprite(268, 48);			 // ゲームクリアの画像
+            scene.addChild(label);                  //シーンにラベルに追加
+	    
+	    var sprite = new Sprite(268, 48);			 //ゲームクリアの画像
 	    sprite.image = game.assets['img/clear.png'];
 	    sprite.x = 190;
 	    sprite.y = 240;
 	    scene.addChild(sprite);
-	    var labelTime = new Label(); // クリアタイムの表示
+	    
+	    var labelTime = new Label(); //クリアタイムの表示
 	    labelTime.text = time.text;
 	    labelTime.x = 280;
 	    labelTime.y = 350;
-	    labelTime.font = "24px cursive";	    
+	    labelTime.font = "24px cursive";
 	    scene.addChild(labelTime);
+	    
 	    var labelSecond = new Label('秒！');
 	    labelSecond.x = 360;
 	    labelSecond.y = 350;
 	    labelSecond.font = "24px cursive";	    	    
 	    scene.addChild(labelSecond);
 
-	    
-            scene.addEventListener('touchstart', function(e) { // シーンにタッチイベントを設定
-                //現在表示しているシーンを外し、直前のシーンを表示します
+	    //クリックしたら2回ポップしタイトルシーンに戻る
+            scene.addEventListener('touchstart', function(e) {
                 game.popScene();
                 game.popScene();		
             });
-            // この関数内で作ったシーンを呼び出し元に返します(return)
+	    
+            //シーンを返す
             return scene;
         };
-
 	
-        // ゲームの_rootSceneをタイトルシーンに置き換えます
+        //rootSceneをタイトルシーンに置き換える
         game.replaceScene(createTitleScene());
-        // このようにcreateTitleScene() と書くと、シーンが関数内で作成されて
-        // createTitleScene()と書かれた場所に代入されます
-
-
     }
-    
-    game.start(); // ゲームをスタートさせます
+    game.start(); //ゲームスタート
 };
 
 
-//弾生成クラス 敵は1秒に1回呼び出し
+//弾生成クラス 敵は1秒に1回、キャラはzを押した時に呼び出す
 var Bullet = Class.create(Sprite, {
-    initialize: function(x, y, dir, type){
+    initialize: function(x, y, dir, type){ //x, yで座標、dirで方向、typeでcharaか敵かを示す
 	Sprite.call(this, 16, 16);
 	this.dir = dir;		// onenterframeで使うため
 	this.type = type;
 	this.hit_chara = 0;
 	this.hit_enemy = 0;
+
+	//弾を出す方向、適切な画像フレーム、表示位置を指定する
 	if(dir == 3){ // 上
 	    this.x = x + 8;
 	    this.y = y - 8;
 	    this.by = this.y;
-	    if(type == 1) this.frame = 56;
-	    if(type == 2) this.frame = 48;
+	    if(type == 1) this.frame = 56;     //charaの弾
+	    if(type == 2) this.frame = 48;     //敵の弾
 	}
 	if(dir == 4){ // 下
 	    this.x = x + 8;
@@ -414,13 +436,14 @@ var Bullet = Class.create(Sprite, {
 	    this.bx = this.x;
 	    if(type == 1) this.frame = 62;
 	    if(type == 2) this.frame = 54;
-	}		    
+	}
+
+	//画像を指定し表示
 	this.image = game.assets['img/icon0.png'];
 	scene.addChild(this);
     },
     onenterframe: function(){
-	//もし弾が障害物や戦車に当たったら弾を消す
-	//障害物
+	//障害物に弾が当たったらエフェクトを出し消す
 	for(var j = 0; j < 30; j++){	
 	    if(this.intersect(obstacles[j])){
 		hitEffect(this.x, this.y);
@@ -428,7 +451,7 @@ var Bullet = Class.create(Sprite, {
 	    }
 	}
 
-	//基本的に弾は一定距離進んだら消える
+	//弾を一定距離進め、消す
 	if(this.dir == 3){	// 上
     	    this.y -= 10;
 	    if(this.by - this.y >= 100){
@@ -453,14 +476,18 @@ var Bullet = Class.create(Sprite, {
 		scene.removeChild(this);
 	    }
 	}
-	if(this.intersect(chara) && this.hit_chara == 0 && this.type == 2){ // 連続ヒットしないため キャラに弾があたるとき
+
+	//キャラへの当たり判定
+	if(this.intersect(chara) && this.hit_chara == 0 && this.type == 2){
 	    this.hit_chara++;
 	    hitEffect(this.x, this.y);
 	    myHp--;
 	    scene.removeChild(this);	    
 	}
+
+	//敵への当たり判定
 	for(var i = 0; i < 3; i++){
-	    if(this.intersect(enemies[i]) && this.hit_enemy == 0 && this.type == 1 && enemies[i].alive == 1){ // 連続ヒットしないため 敵に弾が当たるとき
+	    if(this.intersect(enemies[i]) && this.hit_enemy == 0 && this.type == 1 && enemies[i].alive == 1){
 		this.hit_enemy++;
 		hitEffect(this.x, this.y);
 		enemies[i].hp--;
@@ -471,7 +498,7 @@ var Bullet = Class.create(Sprite, {
 });
 
 
-//障害物の設置
+//障害物クラス
 var Obstacle = Class.create(Sprite, {
     initialize:function(x, y){
 	Sprite.call(this, 16, 16);
@@ -483,7 +510,7 @@ var Obstacle = Class.create(Sprite, {
     }
 });
 
-//体力表示
+//体力クラス
 var Heart = Class.create(Sprite, {
     initialize:function(x, y){
 	Sprite.call(this, 16, 16);
@@ -495,7 +522,7 @@ var Heart = Class.create(Sprite, {
     }
 });
 
-//弾や戦車が当たったときのエフェクト
+//弾が戦車や障害物に当たったときのエフェクト
 var hitEffect = function(x, y){
     var effect = new Sprite(16, 16);
     var i = 0;
@@ -504,6 +531,8 @@ var hitEffect = function(x, y){
     effect.y = y + 8;
     effect.frame = 0;
     scene.addChild(effect);
+
+    //爆発に見せるため1フレームごとに表示画像を変える
     effect.addEventListener('enterframe', function(){
 	effect.frame = i;
 	i++;
