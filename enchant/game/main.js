@@ -25,21 +25,21 @@ window.onload = function() {
             scene.addChild(labelTitle);
             
 	    var labelrule = new Label('操作方法：矢印で移動！zで弾を撃つ！');
-	    labelrule.x = 180;
+	    labelrule.x = 170;
 	    labelrule.y = 280;
 	    labelrule.font = "18px cursive";
 	    labelrule.color = 'black'
             scene.addChild(labelrule);
             
 	    var labelrule = new Label('敵をなるべく早くすべて倒せ！');
-	    labelrule.x = 180;
+	    labelrule.x = 200;
 	    labelrule.y = 400;
 	    labelrule.font = "18px cursive";
 	    labelrule.color = 'black'
             scene.addChild(labelrule);
 	    
 	    var labelrule = new Label('クリックでスタート！');
-	    labelrule.x = 180;
+	    labelrule.x = 230;
 	    labelrule.y = 480;
 	    labelrule.font = "18px cursive";
 	    labelrule.color = 'black'
@@ -131,7 +131,7 @@ window.onload = function() {
 		count++;
 		if(count > 30){
 		    for(var i = 0; i < 3; i++){
-			if(enemies[i].intersect(chara) && enemies[i].alive == 1){
+			if(enemies[i].intersect(chara) && enemies[i].alive == 1){ //衝突判定にはintersectメソッドを使用
 			    count = 0;
 			    hitEffect(chara.x, chara.y);
 				console.log("hp = " + myHp);
@@ -303,7 +303,7 @@ window.onload = function() {
 		enemies[i].alive = 1; // 1が生きてる 0で死んでる
 	    }
 
-	    //ランダム関数　0~nまで この関数は外部からの引用
+	    //ランダム関数　0~nまで
 	    function rand(n) {
 		return Math.floor(Math.random() * (n + 1));
 	    }
