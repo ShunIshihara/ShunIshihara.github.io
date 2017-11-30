@@ -1,28 +1,45 @@
 ### mylang.txtを読み込み.lyファイルに書き込む
-import chord_dic                # コードトーンを参照できるように
+import data                # コードトーンを参照できるように
 import sys
 
 ### 初期化変数
 output_gt = ""                  # .lyに書き込むギター部分の初期化
 chord_all = []
 
-# コード処理関数
+def chord_select(chord_name):
+    for chord in data.chords:
+        if chord["name"] == chord_name:
+            return chord["tones"]
+
+# コード行の処理関数
 def guitar_create(chord_name,chord_process):
-    chord_tones = chord_dic.chord_select(chord_name)
+    global output_gt
+    chord_tones = chord_select(chord_name)
     chord_tone = chord_tones["1"]
     for process_type in chord_process:
         assign_flag = 0         # 指弾きがあるかどうかのフラグ
+        note_flag = 0
         if process_type[0] == "h":
             if len(chord_tones) >= 2:
                 tone_assign = process_type.strip("h()")
                 chord_tone = chord_tones[tone_assign] # tonesが複数あるなら指定した番号のtoneを入れる
+        elif process_type[0] == "n":
+            note_flag = 1
+            output_gt_note = "{0} ".format(process_type.strip("n()\n"))
         elif process_type[0] == "r": # リズムの場合
-            chord_rhythm = process_type.strip("r()\n")
-            lengths = chord_rhythm.split()   # リズムを分割してlengthsに入れる
+            if process_type[1] == ("("):
+                chord_rhythm = process_type.strip("r()\n")
+                lengths = chord_rhythm.split()   # リズムを分割してlengthsに入れる
+            else:
+                chord_rhythm = process_type[1:].strip("\n")
+                lengths = data.rhythms[chord_rhythm].split()
         elif process_type[0] == "s": # 弦指定の場合
             assign_flag = 1
             chord_tone = chord_tone.split()
-            assign_strings = process_type.strip("s()\n")
+            if process_type[1] == "(":
+                assign_strings = process_type.strip("s()\n")
+            else:
+                assign_strings = data.strings[process_type[1:].strip("\n")]
             assign_string = assign_strings.split() # 弦指定を分割してassign_stringに入れる 要素数はリズムと同じ
             if len(lengths) != len(assign_string): # エラー処理　もしリズムと弦指定の要素数が合わなければ終了
                 print("リズムと弦指定の数が異なるためプログラムを終了します")
@@ -44,16 +61,20 @@ def guitar_create(chord_name,chord_process):
                     assign_tone.append(chord_tone[int(assign)-1])
             
     ## .lyに追加する記述の作成
-    global output_gt
+    # global output_gt
     i = 0
     # 弦指定なしの場合
     if assign_flag == 0:
-        for length in lengths:          # length変数にlengthsを入れ出力
-            if length.count('r'):
-                output_gt += "r{0} ".format(length[1])    
-            else:
-                output_gt += "<{0}>{1} ".format(chord_tone, length)
-            i += 1
+        if note_flag == 1:
+            # output_gt += output_gt_note
+            pass
+        else:
+            for length in lengths:          # length変数にlengthsを入れ出力
+                if length.count('r'):
+                    output_gt += "r{0} ".format(length[1])
+                else:
+                    output_gt += "<{0}>{1} ".format(chord_tone, length)
+                i += 1
     # 弦指定ありの場合
     elif assign_flag == 1:
         for length in lengths:          # length変数にlengthsを入れ出力
@@ -67,8 +88,17 @@ def guitar_create(chord_name,chord_process):
                 output_gt += "<{0}>{1} ".format(chord_tones, length)
             i += 1
 
-# def reg_dic(dic_name,reg_dic):
-    
+def reg_dic(dic_name,reg_dic):  # dic_nameがリズムと弦指定の場合分け辞書を登録          
+    for dic_element in reg_dic:     # reg_dicを1つずつキーと値に分けてリストに入れる
+        split_par = dic_element.split("(")
+        key = split_par[0]
+        value = split_par[1].strip(")\n")
+        dict = {key:value}
+        if dic_name == "rhythms":
+            data.rhythms.update(dict)
+        if dic_name == "strings":
+            data.strings.update(dict)
+
             
 ### main
 ## 中間言語を1行ずつ読み込む
@@ -119,11 +149,14 @@ for mylang_line in mylang_lines:
         output_tempo = r'\tempo 4 = ' + "{0}\n".format(tempo)
         print(output_tempo, end="")
     ##リズムと弦の登録
-    elif mylang_line.count("rhythm:"):
+    elif mylang_line.count("rhythms:"):
         line_rhythms = mylang_line.split(":")
         reg_rhythms = line_rhythms[1].split(".")
-        print(reg_rhythms)
-        reg_dic(rhythms,reg_rhythms)
+        reg_dic("rhythms",reg_rhythms)
+    elif mylang_line.count("strings:"):
+        line_strings = mylang_line.split(":")
+        reg_strings = line_strings[1].split(".")
+        reg_dic("strings",reg_strings)
     ## コード情報の分割
     else:
         chord_part = mylang_line.split(":")
@@ -131,7 +164,7 @@ for mylang_line in mylang_lines:
         chord_all.append(chord_part[0]) # コードをすべて入れるためのリスト
         chord_process = chord_part[1].split(".")
         output_guitar = guitar_create(chord_name,chord_process) # guitar部分の作成
-print("output_gt:{0}".format(output_gt))
+# print("output_gt:{0}".format(output_gt))
 
 ## .lyファイルの読み込みと書き込み
 origin_f = open("template2.ly", "r") # 1行ずつ読み込みコピーしoutput_gtを適切な位置に入れコピーを再開し最後に書き出しをする
