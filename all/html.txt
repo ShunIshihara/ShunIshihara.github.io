@@ -1,0 +1,714 @@
+  
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+
+    <title>ハッピーバースデートゥーユー / 童謡・唱歌・合唱 ギターコード譜 - U-フレット</title>
+    
+    
+    <!-- header -->
+    <meta name="keywords" content="ギター,コード,歌詞,スマホ,無料">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" />
+	<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <!-- Bootstrap core CSS -->
+    <link href="/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <!-- Bootstrap theme -->
+    <!-- <link href="/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet"> -->
+
+    <!-- Custom styles for this template -->
+    <link href="theme.css" rel="stylesheet">
+    
+    <link href="imobilecss.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="/bootstrap/assets/js/html5shiv.js"></script>
+      <script src="/bootstrap/assets/js/respond.min.js"></script>
+    <![endif]-->
+    
+<link rel="stylesheet" href="/css/base_pc.css" />
+
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-4284386-12', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- Google Analytics -->
+
+<!-- DFP -->
+<script type='text/javascript'>
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+(function() {
+var gads = document.createElement('script');
+gads.async = true;
+gads.type = 'text/javascript';
+var useSSL = 'https:' == document.location.protocol;
+gads.src = (useSSL ? 'https:' : 'http:') + 
+'//www.googletagservices.com/tag/js/gpt.js';
+var node = document.getElementsByTagName('script')[0];
+node.parentNode.insertBefore(gads, node);
+})();
+</script>
+
+<script type='text/javascript'>
+googletag.cmd.push(function() {
+googletag.defineSlot('/69429296/ufret_right-160x600', [160, 600], 'div-gpt-ad-1426289547330-0').addService(googletag.pubads());
+googletag.pubads().enableSingleRequest();
+googletag.enableServices();
+});
+</script>
+<!-- DFP -->
+
+<!-- Include Sidr bundled CSS theme -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="js/favorite.js"></script>
+		
+	<!-- to-top.cssの読み込み -->
+		<link rel="stylesheet" href="./to-top.css"/>
+		<!-- to-top.jsの読み込み -->
+		<script src="./to-top.js"></script>
+	    
+    <meta property="og:image" content="http://www.ufret.jp/facebook.png" />
+
+<!--      Fluct グループ名「U-フレット(スマホ)」      -->
+<script type="text/javascript" src="http://sh.adingo.jp/?G=1000017334&guid=ON"></script>
+
+<!--      criteoヘッダースクリプト      -->
+<script type="text/javascript" src="//static.criteo.net/js/ld/publishertag.js"></script>
+
+<script type="text/javascript">
+$(function(){
+    var target = $("#side");
+    var footer = $("footer")
+    var targetHeight = target.outerHeight(true);
+    var targetTop = target.offset().top;
+ 
+    $(window).scroll(function(){
+        var scrollTop = $(this).scrollTop();
+        if(scrollTop > targetTop){
+            // 動的にコンテンツが追加されてもいいように、常に計算する
+            var footerTop = footer.offset().top;
+             
+            if(scrollTop + targetHeight > footerTop){
+                customTopPosition = footerTop - (scrollTop + targetHeight)
+                target.css({position: "fixed", top:  customTopPosition + "px"});
+            }else{
+                target.css({position: "fixed", top: "10px"});
+            }
+        }else{
+            target.css({position: "static", top: "auto"});
+        }
+    });
+});
+</script>
+<style type="text/css">  
+#side {
+	border-radius: 6px;
+	color: black;
+	display:inline-block;
+	font-size: 14px;
+	height: 100%;
+	padding: 5px;
+	width: 100%;
+}
+.fixed {
+    position: fixed;
+    top: 10px;
+    width: 100%;
+    z-index: 10000;
+}
+</style>    <!-- header -->
+    
+<!-- fluct ad exchange headerタグ -->
+<script type='text/javascript'>
+  var googletag = googletag || {};
+  googletag.cmd = googletag.cmd || [];
+  (function() {
+    var gads = document.createElement('script');
+    gads.async = true;
+    gads.type = 'text/javascript';
+    var useSSL = 'https:' == document.location.protocol;
+    gads.src = (useSSL ? 'https:' : 'http:') +
+      '//www.googletagservices.com/tag/js/gpt.js';
+    var node = document.getElementsByTagName('script')[0];
+    node.parentNode.insertBefore(gads, node);
+  })();
+</script>
+
+<script type='text/javascript'>
+  googletag.cmd.push(function() {
+    googletag.defineSlot('/62532913/p_ufret_728x90_header_6304', [728, 90], 'div-gpt-ad-1461743011782-0').addService(googletag.pubads());
+    //googletag.defineSlot('/62532913/p_ufret_336x280_footer1_6304', [336, 280], 'div-gpt-ad-1461743011782-1').addService(googletag.pubads());
+    //googletag.defineSlot('/62532913/p_ufret_336x280_footer2_6304', [336, 280], 'div-gpt-ad-1461743011782-2').addService(googletag.pubads());
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
+<!-- fluct ad exchange headerタグ -->	
+  </head>
+
+  <body>
+  
+
+    <!-- navbar -->
+    <div id="pagetop"></div>
+
+<div class="navbar navbar-default">
+      <div class="container">
+
+	      
+
+<div style="font-size: 12px;color: gray;">無料♪ギター&ウクレレ&ピアノコード見放題</div>        <div class="navbar-header">
+        
+        <a class="simple-menu" href="#menu"><span class="img_link" style="float:left;">
+                 <button type="button" class="btn btn-xs btn-default" style="margin-top:10px;margin-left:10px;margin-right:-5px;"><img src="/img/menu2.png" width="30px" height="30px" style="margin-top:2px;"></button>
+ </span></a>
+          
+          <a class="navbar-brand" href="/"><img src="/img/logo.png" border="0" /></a>
+
+<div class="img_link" style="float:right;margin-top:12px;margin-left:10px;margin-right:10px;"><a class="nav-toggle" href="#"><img src="/img/search2.png" width="32px" height="32px"></a></div>          
+          
+          </div>
+          
+          
+        
+    </div>
+      </div>
+      
+      <div style="margin-top:-15px;margin-bottom:20px;text-align:center;">
+<a href="/mysongbook.php"><button type="button" class="btn btn-xs btn-default" style="height:30px;width:30%;"><span class="glyphicon glyphicon-music"></span> お気に入り</button></a>
+<a href="/browsinghistory.php"><button type="button" class="btn btn-xs btn-default" style="height:30px;width:30%;margin-left:5px;"><span class="glyphicon glyphicon-time"></span> 閲覧履歴</button></a>
+<a href="/rank.php"><button type="button" class="btn btn-xs btn-default" style="height:30px;width:30%;margin-left:5px;"><span class="glyphicon glyphicon-star"></span> ランキング</button></a>
+</div>    <!-- navbar -->
+    
+    <div class="container theme-showcase">   
+
+<div class="row">
+
+<div class="col-md-9 col-sm-12" style="margin-top: 5px;">
+
+<!-- menu -->
+    <div class="jumbotron" style="margin-top:-15px;margin-bottom:20px;">
+	
+	        <div style="text-align: center;">
+
+      	<form method="get" action="search.php" role="search">
+			<div class="form-group">
+				  <input type="text" name="key" style="height:30px;width:80%" placeholder="曲名•アーティスト名で検索">
+				  <button type="submit" class="btn btn-sm btn-default">検索</button>
+			</div>
+		</form>
+		
+	<div style="margin-top: -10px;margin-bottom: 0px;">
+<p><span style="font-size: 12px;">アーティスト名頭文字の読み仮名で検索</span><br />
+<select name="1" onchange="location.href=this.options[this.selectedIndex].value">
+<option value="#" selected="selected">あ</option>
+  <option value="/artistlist.php?data=a">あ</option>
+  <option value="/artistlist.php?data=i">い</option>
+  <option value="/artistlist.php?data=u">う</option>
+  <option value="/artistlist.php?data=e">え</option>
+  <option value="/artistlist.php?data=o">お</option>
+</select>
+<select name="2" onchange="location.href=this.options[this.selectedIndex].value">
+<option value="#" selected="selected">か</option>
+  <option value="/artistlist.php?data=ka">か</option>
+  <option value="/artistlist.php?data=ki">き</option>
+  <option value="/artistlist.php?data=ku">く</option>
+  <option value="/artistlist.php?data=ke">け</option>
+  <option value="/artistlist.php?data=ko">こ</option>
+</select>
+<select name="3" onchange="location.href=this.options[this.selectedIndex].value">
+<option value="#" selected="selected">さ</option>
+  <option value="/artistlist.php?data=sa">さ</option>
+  <option value="/artistlist.php?data=si">し</option>
+  <option value="/artistlist.php?data=su">す</option>
+  <option value="/artistlist.php?data=se">せ</option>
+  <option value="/artistlist.php?data=so">そ</option>
+</select>
+<select name="4" onchange="location.href=this.options[this.selectedIndex].value">
+<option value="#" selected="selected">た</option>
+  <option value="/artistlist.php?data=ta">た</option>
+  <option value="/artistlist.php?data=ti">ち</option>
+  <option value="/artistlist.php?data=tu">つ</option>
+  <option value="/artistlist.php?data=te">て</option>
+  <option value="/artistlist.php?data=to">と</option>
+</select>
+<select name="5" onchange="location.href=this.options[this.selectedIndex].value">
+<option value="#" selected="selected">な</option>
+  <option value="/artistlist.php?data=na">な</option>
+  <option value="/artistlist.php?data=ni">に</option>
+  <option value="/artistlist.php?data=nu">ぬ</option>
+  <option value="/artistlist.php?data=ne">ね</option>
+  <option value="/artistlist.php?data=no">の</option>
+</select>
+</p>
+<select name="6" onchange="location.href=this.options[this.selectedIndex].value">
+<option value="#" selected="selected">は</option>
+  <option value="/artistlist.php?data=ha">は</option>
+  <option value="/artistlist.php?data=hi">ひ</option>
+  <option value="/artistlist.php?data=hu">ふ</option>
+  <option value="/artistlist.php?data=he">へ</option>
+  <option value="/artistlist.php?data=ho">ほ</option>
+</select>
+<select name="7" onchange="location.href=this.options[this.selectedIndex].value">
+<option value="#" selected="selected">ま</option>
+  <option value="/artistlist.php?data=ma">ま</option>
+  <option value="/artistlist.php?data=mi">み</option>
+  <option value="/artistlist.php?data=mu">む</option>
+  <option value="/artistlist.php?data=me">め</option>
+  <option value="/artistlist.php?data=mo">も</option>
+</select>
+<select name="8" onchange="location.href=this.options[this.selectedIndex].value">
+<option value="#" selected="selected">や</option>
+  <option value="/artistlist.php?data=ya">や</option>
+  <option value="/artistlist.php?data=yu">ゆ</option>
+  <option value="/artistlist.php?data=yo">よ</option>
+</select>
+<select name="9" onchange="location.href=this.options[this.selectedIndex].value">
+<option value="#" selected="selected">ら</option>
+  <option value="/artistlist.php?data=ra">ら</option>
+  <option value="/artistlist.php?data=ri">り</option>
+  <option value="/artistlist.php?data=ru">る</option>
+  <option value="/artistlist.php?data=re">れ</option>
+  <option value="/artistlist.php?data=ro">ろ</option>
+</select>
+<select name="10" onchange="location.href=this.options[this.selectedIndex].value">
+<option value="#" selected="selected">わ</option>
+  <option value="/artistlist.php?data=wa">わ</option>
+  <option value="/artistlist.php?data=nn">ん</option>
+</select>
+</div>
+
+</div>
+</div><!-- menu -->
+
+<div style="margin-top: -15px;margin-bottom: 15px;"><a href="/">トップ</a> > <a href="artistlist.php?data=to">アーティスト名「と」</a> > <a href="/artist.php?data=%E7%AB%A5%E8%AC%A1%E3%83%BB%E5%94%B1%E6%AD%8C%E3%83%BB%E5%90%88%E5%94%B1" >童謡・唱歌・合唱</a></div>
+
+<div class="well well-sm" style="margin-top:-10px;margin-bottom:0px;">
+
+<!-- お気に入り登録ボタン [-->
+<div class="favorite" style="margin-top:2px;">
+	<button type="button" id="btn-fav" class="btn btn-xs btn-primary" style="float:left;" value="1954">この曲をお気に入りに登録</button>
+</div>
+<div style="clear:both;margin-bottom: 12px;"></div>
+<!-- ] お気に入り登録ボタン -->
+
+<h1><strong>ハッピーバースデートゥーユー</strong><span style="font-size: 12px;">&nbsp;&nbsp;童謡・唱歌・合唱</span></h1><p style="font-size: 12px;margin-top:2px;">作詞 : Mildred J.Hill & Patty S.Hill/作曲 : Mildred J.Hill & Patty S.Hill</p><div style="clear:both;margin-bottom:-2px;"></div></div>
+
+<div style="margin-top:5px;margin-bottom:0px;margin-left: -15px;text-align:center;">
+<script type="text/javascript" src="//static.criteo.net/js/ld/publishertag.js"></script>
+<script type="text/javascript">
+Criteo.DisplayAd({
+    "zoneid": 320683,
+    "async": false});
+</script>
+</div>
+<div style="font-size:14px;margin-top:7px;margin-bottom:10px;">
+<span class="label label-default">押さえ方表示</span>&nbsp;
+<span id="gakki_guitar_show" style="display:none;">
+<a href="javascript:void(0);" onclick="gakkiguitar();">ギター</a>
+</span>
+<span id="gakki_guitar_hide" style="color:#9e9999;">
+ギター
+</span>
+<span style="color:#9e9999;">
+ | 
+</span>
+<span id="gakki_ukulele_show">
+<a href="javascript:void(0);" onclick="gakkiukulele();">ウクレレ</a>
+</span>
+<span id="gakki_ukulele_hide" style="display:none;color:#9e9999;">
+ウクレレ
+</span>
+<span style="color:#9e9999;">
+ | 
+</span>
+<span id="gakki_piano_show">
+<a href="javascript:void(0);" onclick="gakkipiano();">ピアノ</a>
+</span>
+<span id="gakki_piano_hide" style="display:none;color:#9e9999;">
+ピアノ
+</span>
+<span style="color:#9e9999;">
+ | 
+</span>
+<span id="gakki_chordname_show">
+<a href="javascript:void(0);" onclick="gakkichordname();">なし</a>
+</span>
+<span id="gakki_chordname_hide" style="display:none;color:#9e9999;">
+なし
+</span>
+</div>
+
+<form name="change">
+<select name="keyselect" onChange="keyChange(this)" class="form-control">
+   <option value="+2" > +２（1音下げtuning） </option>
+   <option value="+1" > +１（半音下げtuning） </option>
+   <option value="0" selected>移調 ±０ (原曲キー) ★簡単弾き</option>
+   <option value="-1" > -１（Capo 1） </option>
+   <option value="-2" > -２（Capo 2） </option>
+   <option value="-3" > -３（Capo 3） </option>
+   <option value="-4" > -４（Capo 4） </option>
+   <option value="-5" > -５（Capo 5） </option>
+   <option value="-6" > -６（Capo 6） </option>
+   <option value="-7" > -７（Capo 7） </option>
+   <option value="-8" > -８（Capo 8） </option>
+   <option value="-9" > -９（Capo 9） </option>
+</select>
+</form>
+
+<div id="keyinfo"></div>
+
+<form name="scroll_change" style="margin-top:5px;margin-bottom:0px;">
+<select name="scroll" onChange="scrollSpeed()" class="form-control">
+   <option value="1">1 (速い)</option>
+   <option value="2">2</option>
+   <option value="3">3</option>
+   <option value="4">4</option>
+   <option value="5">5</option>
+   <option value="6">6</option>
+   <option value="7">7</option>
+   <option value="8">8</option>
+   <option value="9">9</option>
+   <option value="10" selected>自動スクロール速度 10 (デフォルト)</option>
+   <option value="11">11</option>
+   <option value="12">12</option>
+   <option value="13">13</option>
+   <option value="14">14</option>
+   <option value="15">15</option>
+   <option value="16">16</option>
+   <option value="17">17</option>
+   <option value="18">18</option>
+   <option value="19">19</option>
+   <option value="20">20 (遅い)</option>
+</select>
+</form>
+
+<span style="font-size: 12px;">楽譜をクリックすると自動スクロール（＆停止）します。</span>
+
+<div style="margin-top:3px;margin-bottom:0px;margin-left: -15px;text-align:center;">
+<p style="font-size: 12px;margin-bottom:0px;">広告</p>
+<style>
+.my_adslot { width: 320px; height: 100px; margin-left: -15px; }
+@media(min-width: 480px) { .my_adslot { width: 468px; height: 60px; margin-left: -5px; } }
+@media(min-width: 768px) { .my_adslot { width: 728px; height: 90px; margin-left: -10px; } }
+@media(min-width: 992px) { .my_adslot { width: 728px; height: 90px; margin-left: -15px; } }
+</style>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Uフレットスコア上部 -->
+<ins class="adsbygoogle my_adslot"
+     style="display:inline-block"
+     data-ad-client="ca-pub-7553672588754865"
+     data-ad-region="scoretop"
+     data-ad-slot="1593094452"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+
+<div id="blyodnijb" onclick="autoscroll()" style="margin-top:25px;margin-bottom:0px;font-size:16px;"><p class="atfolhyds" style="line-height:75px;font-weight: bold;color: #b22222;width: 90%;"></span><span class="krijcheug" style="position:relative;top:-20px;color: black;margin-left:8px;line-height:40px;"><ruby><img src="/chord_pc/c/c.png" width="48px" height="40px"><rt>C</rt></ruby></span><span class="mejiowvnz" style="position:relative;margin-left:-20px;font-weight: bold;margin-right:5px;">ハッピー　バースデー　トゥー</span><span class="krijcheug" style="position:relative;top:-20px;color: black;margin-left:8px;line-height:40px;"><ruby><img src="/chord_pc/g/g.png" width="48px" height="40px"><rt>G</rt></ruby></span><span class="mejiowvnz" style="position:relative;margin-left:-20px;font-weight: bold;margin-right:5px;">ユー</p><p class="atfolhyds" style="line-height:75px;font-weight: bold;color: #b22222;width: 90%;"></span><span class="krijcheug" style="position:relative;top:-20px;color: black;margin-left:8px;line-height:40px;"><ruby><img src="/chord_pc/g/g.png" width="48px" height="40px"><rt>G</rt></ruby></span><span class="mejiowvnz" style="position:relative;margin-left:-20px;font-weight: bold;margin-right:5px;">ハッピー　バースデイ　トゥ</span><span class="krijcheug" style="position:relative;top:-20px;color: black;margin-left:8px;line-height:40px;"><ruby><img src="/chord_pc/c/c.png" width="48px" height="40px"><rt>C</rt></ruby></span><span class="mejiowvnz" style="position:relative;margin-left:-20px;font-weight: bold;margin-right:5px;">ユー</p><p class="atfolhyds" style="line-height:75px;font-weight: bold;color: #b22222;width: 90%;"></span><span class="krijcheug" style="position:relative;top:-20px;color: black;margin-left:8px;line-height:40px;"><ruby><img src="/chord_pc/c/c.png" width="48px" height="40px"><rt>C</rt></ruby></span><span class="mejiowvnz" style="position:relative;margin-left:-20px;font-weight: bold;margin-right:5px;">ハッピー　バースデイ　ディア</span><span class="krijcheug" style="position:relative;top:-20px;color: black;margin-left:8px;line-height:40px;"><ruby><img src="/chord_pc/g/g7.png" width="48px" height="40px"><rt>G7</rt></ruby></span><span class="mejiowvnz" style="position:relative;margin-left:-20px;font-weight: bold;margin-right:5px;">〇〇</span><span class="krijcheug" style="position:relative;top:-20px;color: black;margin-left:8px;line-height:40px;"><ruby><img src="/chord_pc/f/f.png" width="48px" height="40px"><rt>F</rt></ruby></span><span class="mejiowvnz" style="position:relative;margin-left:-20px;font-weight: bold;margin-right:5px;">・・・</p><p class="atfolhyds" style="line-height:75px;font-weight: bold;color: #b22222;width: 90%;"></span><span class="krijcheug" style="position:relative;top:-20px;color: black;margin-left:8px;line-height:40px;"><ruby><img src="/chord_pc/f/f.png" width="48px" height="40px"><rt>F</rt></ruby></span><span class="mejiowvnz" style="position:relative;margin-left:-20px;font-weight: bold;margin-right:5px;">ハッピー　</span><span class="krijcheug" style="position:relative;top:-20px;color: black;margin-left:8px;line-height:40px;"><ruby><img src="/chord_pc/c/c.png" width="48px" height="40px"><rt>C</rt></ruby></span><span class="mejiowvnz" style="position:relative;margin-left:-20px;font-weight: bold;margin-right:5px;">バースデイ</span><span class="krijcheug" style="position:relative;top:-20px;color: black;margin-left:8px;line-height:40px;"><ruby><img src="/chord_pc/g/g7.png" width="48px" height="40px"><rt>G7</rt></ruby></span><span class="mejiowvnz" style="position:relative;margin-left:-20px;font-weight: bold;margin-right:5px;">トゥ</span><span class="krijcheug" style="position:relative;top:-20px;color: black;margin-left:8px;line-height:40px;"><ruby><img src="/chord_pc/c/c.png" width="48px" height="40px"><rt>C</rt></ruby></span><span class="mejiowvnz" style="position:relative;margin-left:-20px;font-weight: bold;margin-right:5px;">ユー</p></div>
+<script type="text/javascript" src="/js/uczighmauichopc.min.js"></script>
+
+<div style="text-align: center;margin:2px auto;width :685px;">
+<p style="font-size: 12px;margin-bottom:5px;">広告</p>
+<div style="float: left;margin: 2px;">
+<script type="text/javascript" src="//static.criteo.net/js/ld/publishertag.js"></script>
+<script type="text/javascript">
+Criteo.DisplayAd({
+    "zoneid": 320687,
+    "async": false});
+</script>
+</div>
+<div style="float: right;margin: 2px;">
+<script type="text/javascript" src="//static.criteo.net/js/ld/publishertag.js"></script>
+<script type="text/javascript">
+Criteo.DisplayAd({
+    "zoneid": 408672,
+    "async": false});
+</script>
+</div>
+</div>
+<div style="clear:both;"></div>
+
+<div style="margin-top:10px;margin-bottom:10px;"><div style="margin-top: 5px;margin-bottom: 10px;"><a href="/">トップ</a> > <a href="artistlist.php?data=to">アーティスト名「と」</a> > <a href="/artist.php?data=%E7%AB%A5%E8%AC%A1%E3%83%BB%E5%94%B1%E6%AD%8C%E3%83%BB%E5%90%88%E5%94%B1" >童謡・唱歌・合唱</a></div></div><div style="margin-bottom:10px;"><span class="label label-success"><span class="glyphicon glyphicon-tags"></span> タグ</span>&nbsp;<a href="pickup.php?tag=%E5%85%A5%E9%96%80">入門</a>&nbsp;<a href="pickup.php?tag="></a>&nbsp;</div><div style="clear:both;margin-bottom:10px;"></div></div><div class="col-md-3 col-sm-12">
+<!-- tag_menu -->
+    
+<p style="font-size: 12px;margin-bottom:5px;text-align:center;">広告</p>
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- UフレットサイドバーPC上部 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:200px;height:200px"
+     data-ad-client="ca-pub-7553672588754865"
+     data-ad-region="sidebarpcup"
+     data-ad-slot="9709330452"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>	
+
+	
+<div id="menu"></div>
+
+<div id="tag_menu" class="list-group">
+
+  <a href="/" class="list-group-item"><span class="glyphicon glyphicon-home"></span> トップページ</a>
+    <a href="/new.php" class="list-group-item"><span class="label label-danger">New!</span> 新着ギターコード譜</a>
+    <a href="/rank.php" class="list-group-item"><span class="label label-primary">★</span> 人気楽曲ランキング</a>
+    <a href="/rank_artist.php" class="list-group-item"><span class="label label-warning">☆</span> アーティストランキング</a>
+    <a href="/chordbook.php" class="list-group-item"><span class="glyphicon glyphicon-music"></span> ギターコードブック</a>
+    <a href="/mysongbook.php" class="list-group-item">マイソングブック(お気に入り)</a>
+    <a href="/browsinghistory.php" class="list-group-item">最近閲覧した曲</a>
+    <span class="label label-default" style="display:block;width:100%;">ギター初心者向けの曲</span>
+    <a href="/pickup.php?tag=%E5%85%A5%E9%96%80" class="list-group-item">入門</a>
+    <a href="/pickup.php?tag=%E5%88%9D%E7%B4%9A" class="list-group-item">初級</a>
+    <span class="label label-default" style="display:block;width:100%;">ピックアップカテゴリ</span>
+    <a href="/pickup.php?tag=%E5%AE%9A%E7%95%AA" class="list-group-item">定番ソング</a>
+    <a href="/pickup.php?tag=%E6%B4%8B%E6%A5%BD" class="list-group-item">洋楽</a>
+    <a href="/pickup.php?tag=%E3%82%A2%E3%83%8B%E3%83%A1" class="list-group-item">アニメソング</a>
+    <a href="/pickup.php?tag=%E3%83%9C%E3%82%AB%E3%83%AD" class="list-group-item">ボーカロイド</a>
+    <a href="/pickup.php?tag=%E6%98%A0%E7%94%BB" class="list-group-item">映画</a>
+    <a href="/pickup.php?tag=%E3%83%89%E3%83%A9%E3%83%9E" class="list-group-item">ドラマ</a>
+    <a href="/pickup.php?tag=CM" class="list-group-item">CMソング</a>
+    <a href="/pickup.php?tag=%E3%82%B8%E3%83%96%E3%83%AA" class="list-group-item">ジブリ</a>
+    <a href="/artist.php?data=%E7%AB%A5%E8%AC%A1%E3%83%BB%E5%94%B1%E6%AD%8C%E3%83%BB%E5%90%88%E5%94%B1" class="list-group-item">童謡</a>
+</div>
+
+
+<div style="margin-top:0px;margin-bottom:0px;margin-left:-10px;" id="side">
+<p style="font-size: 12px;margin-bottom:5px;text-align:center;">広告</p>
+<script type="text/javascript" src="//static.criteo.net/js/ld/publishertag.js"></script>
+<script type="text/javascript">
+Criteo.DisplayAd({
+    "zoneid": 320689,
+    "async": false});
+</script>
+</div>
+    <!-- tag_menu -->
+    
+	
+      
+      </div>
+    
+    
+      </div>
+	
+	<img src="/check.php?pagename=%E3%83%8F%E3%83%83%E3%83%94%E3%83%BC%E3%83%90%E3%83%BC%E3%82%B9%E3%83%87%E3%83%BC%E3%83%88%E3%82%A5%E3%83%BC%E3%83%A6%E3%83%BC+%2F+%E7%AB%A5%E8%AC%A1%E3%83%BB%E5%94%B1%E6%AD%8C%E3%83%BB%E5%90%88%E5%94%B1" width="1" height="1" alt="check">
+  
+    <!-- footer -->
+    <footer></footer>
+
+<hr />
+
+<div style="text-align: left;margin-top: -10px;margin-bottom: 10px;"><a href="/">
+<button type="button" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-home"></span> HOME</button>
+</a></div>
+		
+<div style="text-align: center;margin-top:15px;">
+<p style="margin-left: -10px;">
+<a href="https://twitter.com/u_fret" class="twitter-follow-button" data-show-count="true" data-lang="ja" data-size="large">@u_fretさんをフォロー</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+</p>
+<p>
+<iframe src="http://www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fufret.jp&amp;width=275px&amp;height=258&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=true" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:95%; height:258px;" allowTransparency="true"></iframe>
+</p>
+</div>
+		
+<div class="well well-sm">
+<p style="text-align: center;">
+<a href="/help">ヘルプ</a> | 
+<a href="/request.php">楽曲リクエスト</a>
+</p>
+<p style="text-align: center;">
+<img border="0" alt="JASRAC許諾 9011247005Y38026" height="40" src="/img/jasrac.png" />&nbsp;
+<img border="0" alt="NexTone許諾 ID000000448" height="40" src="/img/nextone.png" />
+</p>
+<p style="text-align: center;">JASRAC許諾 9011247005Y38026<br />
+NexTone許諾 ID000000448</p>
+<p style="text-align: center;margin-top:-5px;margin-bottom: 2px;"><a href="http://www.glnet.co.jp/" target=”_blank”>会社概要</a> | <a href="/privacypolicy.php">プライバシーポリシー</a> | <a href="/kiyaku.php">利用規約</a></p>
+<p style="text-align: center;margin-bottom: -2px;">&copy; 2013-2017 U-フレット</p>
+</div>
+</div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/bootstrap/assets/js/jquery.js"></script>
+    <script src="/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/bootstrap/assets/js/holder.js"></script>
+    
+    <script src="js/jquery.inview.js"></script>
+   
+<script type="text/javascript">
+$(function(){
+	$('a[href^=#]').click(function(){
+		var speed = 500;
+		var href= $(this).attr("href");
+		var target = $(href == "#" || href == "" ? 'html' : href);
+		var position = target.offset().top;
+		$("html, body").animate({scrollTop:position}, speed, "swing");
+		return false;
+	});
+});
+
+
+$(function(){
+$(".jumbotron").css("display", "none");
+ 
+    $(".nav-toggle").click(function(){
+        $(".jumbotron").toggle();
+    });
+});
+
+    var timerID;
+    var flag = false;
+    var speed = 55;
+    
+    function scroll(){
+        window.scrollBy( 0, 1 );
+    }
+    
+    function scrollSpeed() {
+		var obj = document.scroll_change.scroll;
+		var index = obj.selectedIndex;
+		
+		switch ( index ) {
+			case 0:
+			speed = 1;
+			break;
+			
+			case 1:
+			speed = 10;
+			break;
+			
+			case 2:
+			speed = 20;
+			break;
+			
+			case 3:
+			speed = 25;
+			break;
+			
+			case 4:
+			speed = 30;
+			break;
+			
+			case 5:
+			speed = 35;
+			break;
+			
+			case 6:
+			speed = 40;
+			break;
+			
+			case 7:
+			speed = 45;
+			break;
+			
+			case 8:
+			speed = 50;
+			break;
+			
+			case 9:
+			speed = 55;
+			break;
+			
+			case 10:
+			speed = 60;
+			break;
+			
+			case 11:
+			speed = 65;
+			break;
+			
+			case 12:
+			speed = 70;
+			break;
+			
+			case 13:
+			speed = 75;
+			break;
+			
+			case 14:
+			speed = 80;
+			break;
+			
+			case 15:
+			speed = 85;
+			break;
+			
+			case 16:
+			speed = 90;
+			break;
+			
+			case 17:
+			speed = 95;
+			break;
+			
+			case 18:
+			speed = 100;
+			break;
+			
+			case 19:
+			speed = 110;
+			break;
+		}
+     }
+    
+		
+		function autoscroll() {
+		if ( flag == false ) {
+	    		timerID = setInterval( "scroll()", speed );
+	    		flag = true;
+	    	} else {
+				clearInterval( timerID );
+				flag = false;
+			}
+		}
+	
+	
+	
+	$(document).ready( function(){
+		var key = "0";
+		document.change.keyselect.value = key;
+		keyChange( document.change.keyselect );
+	});
+	
+	$('#myTab a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+
+</script>
+
+	
+<script src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+	style="display:none;width:320px;height:50px"
+	data-ad-client="ca-pub-7553672588754865"
+	data-ad-channel="3112312450"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({
+params: { google_reactive_ad_format: 1 }
+ });
+</script>
+
+
+<!-- TOPに -->
+<div id="page-top">
+	<p><a id="move-page-top">↑ TOP</a></p>
+</div>
+<!-- ここまで -->
+
+  </body>
+</html>    <!-- footer -->
