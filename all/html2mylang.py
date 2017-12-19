@@ -53,12 +53,18 @@ for lyrics in lyrics_html2:
     lyrics_html3.append(lyrics.split('</span><span class="krijcheug"'))
 
 lyrics_html4 = []
+lyrics_html_first = []
 for lyrics in lyrics_html3:
     if lyrics[0].find("blyodnijb") == -1:
         if lyrics[0].find(r'</p><p class="atfolhyds" style="line-height:75px;font-weight: bold;color: #b22222;width: 90%;">'):
             lyrics_html4.append(lyrics[0].replace('</p><p class="atfolhyds" style="line-height:75px;font-weight: bold;color: #b22222;width: 90%;">','').replace('\u3000','').replace('\ufeff\ufeff','').replace("\n",""))
         else:
             lyrics_html4.append(lyrics[0].replace('\u3000','').replace('\ufeff\ufeff','').replace("\n",""))
+    elif lyrics[0].find("blyodnijb") > -1 and lyrics[0].find(r'<p class="atfolhyds" style="line-height:75px;font-weight: bold;color: #b22222;width: 90%;">'):
+        lyrics_html_first.append(lyrics[0].replace('<p class="atfolhyds" style="line-height:75px;font-weight: bold;color: #b22222;width: 90%;">','').replace('\u3000','').replace('\ufeff\ufeff','').replace("\n","").replace("</p>","").replace(r'<div id="blyodnijb" onclick="autoscroll()" style="margin-top:25px;margin-bottom:0px;font-size:16px;">﻿',""))
+        
+lyrics_html4[0] = lyrics_html_first[0] + lyrics_html4[0]
+
 lyrics_html_last = lyrics_html1[-1].replace("</p></div>", "").replace('</p><p class="atfolhyds" style="line-height:75px;font-weight: bold;color: #b22222;width: 90%;">','').replace("\n","")
 lyrics_html4.append(lyrics_html_last)
 
@@ -96,6 +102,7 @@ mylang_f.write("title:{0}\n".format(title))
 mylang_f.write("artist:{0}\n".format(artist))
 mylang_f.write("composer:{0}\n".format(composer))
 mylang_f.write("lyrics:{0}\n".format(lyrics))
+mylang_f.write("key:\n")
 
 # コードと歌詞情報
 i = 0

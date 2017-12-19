@@ -30,10 +30,10 @@ def guitar_create(chord_name,chord_lyrics,chord_process):
         if rhythm_flag == 1:
             if process_type[0] == "s":
                 chord_tone_s = chord_tone.split()
-                if process_type[1] == "(": # 弦指定が()で入力か宣言されているものから使うか
-                    assign_string = process_type.strip("s()\n").split()
+                if process_type.count("("): # 弦指定が()で入力か宣言されているものから使うか
+                    assign_string = process_type.strip("strings()\n").split()
                 else:
-                    assign_strings = data.strings[process_type[1:].strip("\n")]
+                    assign_strings = data.strings[process_type[1:].strip("strings\n")]
                     assign_string = assign_strings.split() # 弦指定を分割してassign_stringに入れる 要素数はリズムと同じ
                 if len(lengths) != len(assign_string): # エラー処理　もしリズムと弦指定の要素数が合わなければ終了
                     print("リズムと弦指定の数が異なるためプログラムを終了します")
@@ -74,18 +74,19 @@ def guitar_create(chord_name,chord_lyrics,chord_process):
             if len(chord_tones) >= 2:
                 tone_assign = process_type.strip("h()\n")
                 chord_tone = chord_tones[tone_assign] # tonesが複数あるなら指定した番号のtoneを入れる
-        elif process_type[0] == "n":                  # "とcdefgabを認める（場合によってはリズム(r)の後にする）
-            output_gt += "{0} ".format(process_type.strip("n()\n"))
-            output_length += "{0} ".format(process_type.strip("n()\n")) # コード全体の長さを計算するため
+        elif process_type[0] == "n" or process_type[0] == '"':                  # "とcdefgabを認める（場合によってはリズム(r)の後にする）
+            output_gt += "{0} ".format(process_type.strip('n()"\n'))
+            output_length += "{0} ".format(process_type.strip('n()"\n')) # コード全体の長さを計算するため
         elif process_type[0] == "r": # リズムの場合
             rhythm_flag = 1
-            if process_type[1] == ("("):
-                chord_rhythm = process_type.strip("r()\n")
-                lengths = chord_rhythm.split()   # リズムを分割してlengthsに入れる
+            if process_type.count("("):
+                chord_rhythm = process_type.strip("rhythms()\n")
+                lengths = chord_rhythm.split()  # リズムを分割してlengthsに入れる
                 all_lengths += lengths
             else:
-                chord_rhythm = process_type[1:].strip("\n")
+                chord_rhythm = process_type[1:].strip("rhythms\n")
                 lengths = data.rhythms[chord_rhythm].split()
+                all_lengths += lengths
             if process_type.count("\n"):
                 for length in lengths:          # length変数にlengthsを入れ出力
                     if length.count('r'):
@@ -106,6 +107,7 @@ def guitar_create(chord_name,chord_lyrics,chord_process):
     length_2 = 0
     length_1 = 0
     for all_length in all_lengths:
+        all_length = all_length.replace("r","")
         if all_length == "16":
             length_16 += 1
         elif all_length == "8":
@@ -131,7 +133,7 @@ def guitar_create(chord_name,chord_lyrics,chord_process):
     all_length.append(length_4)
     all_length.append(length_8)
     all_length.append(length_16)
-    print(all_length)
+
     if all_length[0] >= 4:
         core_length = r"\longa" # 歌詞，コードの1番大きな部分を占める長さ
         length_1 = 0
@@ -206,6 +208,7 @@ def guitar_create(chord_name,chord_lyrics,chord_process):
         chord_ly = "{0}{1}".format(chord_ly,core_length)
 
     output_chord += "{0} ".format(chord_ly) # とN.C.とコードを.lyが読める変換
+    chord_lyrics = chord_lyrics.replace(" ","")
     if chord_lyrics == "":
         output_lyrics += "　{0} ".format(core_length)     # と全角スペース
     else:
@@ -277,7 +280,7 @@ for mylang_line in mylang_lines:
         line_capo = mylang_line.split(":")
         capo = line_capo[1].rstrip("\n")
         output_capo = 'piece = "Capo:{0}"\n'.format(capo)
-    elif mylang_line.count("tempo:"): # カポ
+    elif mylang_line.count("tempo:"): # テンポ
         line_tempo = mylang_line.split(":")
         tempo = line_tempo[1].rstrip("\n")
         output_tempo = r'\tempo 4 = ' + "{0}\n".format(tempo)
@@ -290,7 +293,10 @@ for mylang_line in mylang_lines:
         elif key_tone.count('♭'):
             key_tone = key_tone.replace('♭', 'f')
         if len(key_all) == 1:
-            output_key = r'\key {0} \major'.format(key_tone)
+            if len(key_tone) != 0:
+                output_key = r'\key {0} \major'.format(key_tone)
+            else:
+                output_key = r'\key c \major'
         else:
             key_brightness = key_all[1].lower()
             output_key = r'\key {0} \{1}'.format(key_tone,key_brightness)

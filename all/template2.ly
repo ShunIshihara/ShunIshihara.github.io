@@ -63,7 +63,7 @@ guitar = {
 
     % ギターダイアグラム表示
     \context FretBoards = "2" {
-	\chord
+	% \chord
     }
     
     %%ギター

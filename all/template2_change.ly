@@ -6,10 +6,10 @@
 
 %%ヘッダー
 \header {                       
-title = "ハッピーバースデートゥーユー"
-subtitle = "童謡・唱歌・合唱"
-composer = "Mildred J.Hill & Patty S.Hill"
-arranger = "Mildred J.Hill & Patty S.Hill"
+title = "小さな恋のうた"
+subtitle = "MONGOL800"
+composer = "MONGOL800"
+arranger = "MONGOL800"
 }
 
 %% ボーカル
@@ -19,7 +19,7 @@ vocal =  \relative c' {
 
 %% 歌詞
 lyric = \lyricmode {
-ハッピーバースデートゥー4 ユー2 ハッピーバースデイトゥ1 ユー2 ハッピーバースデイディア1 〇〇4 ・・・2. ハッピー1 バースデイ1 トゥ1 ユー1 
+広い宇宙1 の数1 ある一1 つ青1 い地球1 の広1 い世界1 で小1 さな恋1 の思1 いは届1 く小1 さな島1 のあな1 たのもと1 へ1 あな1 たと出会1 い時1 は流れ1 る思1 いを込め1 た手1 紙もふえ1 るいつ1 しか二1 人互1 いに響1 く時1 に激し1 く時1 に切な1 く響1 くは遠1 く遥1 か彼方1 へやさ1 しい歌1 は世1 界を変え1 る\breve ほ\breve らあ1 なたにとっ1 て1 大事な1 人ほどす1 ぐそ1 ばにいる1 のた1 だあ1 なたにだ1 け1 届いて欲1 しい1 響け1 恋の1 歌ほ1 ら1 　1 　1 ほ1 ら1 　1 　1 ほ1 ら1 　1 　1 　1 響け1 恋の1 歌あなたは気づ1 く二1 人は歩1 く暗1 い道で1 も日々1 照らす1 月握1 りしめた1 手離1 すことな1 く思1 いは強1 く永1 遠誓1 う永1 遠の1 淵きっ1 と僕は1 言う思1 い変わら1 ず同1 じ言葉1 をそれ1 でも足り1 ず1 涙にかわ1 り1 喜びにな1 り言1 葉にでき1 ずただ1 抱きしめ1 るただ1 抱きしめ1 る1 ほ1 らあ1 なたにとっ1 て1 大事な1 人ほどす1 ぐそ1 ばにいる1 のた1 だあ1 なたにだ1 け1 届いて欲1 しい1 響け1 恋の1 歌ほ1 ら1 　1 　1 ほ1 ら1 　1 　1 ほ1 ら1 　1 　1 　1 響け1 恋の1 歌夢1 ならば覚めない1 で夢1 ならば覚めない1 であな1 たと過ご1 した時1 永1 遠1 の星1 とな1 るほ1 らあ1 なたにとっ1 て1 大事な1 人ほどす1 ぐそ1 ばにいる1 のた1 だあ1 なたにだ1 け1 届いて欲1 しい1 響け1 恋の1 歌ほ1 らあ1 なたにとっ1 て1 大事な1 人ほどす1 ぐそ1 ばにいる1 のた1 だあ1 なたにだ1 け1 届いて欲1 しい1 響け1 恋の1 歌ほ1 ら1 　1 　1 ほ1 ら1 　1 　1 ほ1 ら1 　1 　1 　1 響け1 恋の1 歌1 
 }
 
 \storePredefinedDiagram #default-fret-table
@@ -33,24 +33,211 @@ lyric = \lyricmode {
 
 %% コードとダイアグラム用
 chord = \chordmode {
-c4 g2 g1 c2 c1 g4:7 f2. f1 c1 g1:7 c1 
+b1 ds1:m e1 b1 e1 b1 fs1 gs1:m b1 ds1:m e1 b1 e1 b1 fs1 gs1:m fs1 b1 ds1:m e1 b1 e1 b1 fs1 gs1:m b1 ds1:m e1 b1 e1 b1 fs1 gs1:m ds1:m e1 fs1 gs1:m ds1:m e1 fs1 b\breve fs\breve e1 fs1 gs1:m ds1:m e1 b1 fs1 b1 e1 fs1 gs1:m ds1:m e1 b1 fs1 b1 e1 fs1 gs1:m ds1:m e1 fs1 gs1:m ds1:m e1 fs1 gs1:m ds1:m e1 fs1 b1 ds1:m e1 b1 e1 b1 fs1 gs1:m b1 ds1:m e1 b1 e1 b1 fs1 gs1:m b1 ds1:m e1 b1 e1 b1 fs1 gs1:m ds1:m e1 fs1 gs1:m ds1:m e1 fs1 b1 fs1 b1 fs1 b1 fs1 e1 fs1 gs1:m ds1:m e1 b1 fs1 b1 e1 fs1 gs1:m ds1:m e1 b1 fs1 b1 e1 fs1 gs1:m ds1:m e1 fs1 gs1:m ds1:m e1 fs1 gs1:m ds1:m e1 fs1 b1 e1 b1 e1 b1 e1 fs1 gs1:m ds1:m e1 b1 fs1 e1 fs1 gs1:m ds1:m e1 b1 fs1 b1 e1 fs1 gs1:m ds1:m e1 b1 fs1 b1 e1 fs1 gs1:m ds1:m e1 b1 fs1 b1 e1 fs1 gs1:m ds1:m e1 b1 fs1 b1 e1 fs1 gs1:m ds1:m e1 fs1 gs1:m ds1:m e1 fs1 gs1:m ds1:m e1 fs1 b1 
 }
 
 %% ギター(コードを表示したい音符に^""でできる)
 guitar = {
-\key c \major
+\key b \major
   \time 4/4
-<c\5 e\4 g\3 c'\2 e'\1>4 
-<g,\6 b,\5 d\4 g\3 b\2 g'\1>2 
-<g,\6 b,\5 d\4 g\3 b\2 g'\1>4 <g,\6 b,\5 d\4 g\3 b\2 g'\1>4 <g,\6 b,\5 d\4 g\3 b\2 g'\1>4 <g,\6 b,\5 d\4 g\3 b\2 g'\1>4 
-<c\5 e\4 g\3 c'\2 e'\1>2 
-<c\5 e\4 g\3 c'\2 e'\1>4 <c\5 e\4 g\3 c'\2 e'\1>4 <c\5 e\4 g\3 c'\2 e'\1>4 <c\5 e\4 g\3 c'\2 e'\1>4 
-<g,\6 b,\5 d\4 g\3 b\2 f'\1>4 
-<f,\6 c\5 f\4 a\3 c'\2 f'\1>4 c8 e8 g8 c'8 
-<f,\6 c\5 f\4 a\3 c'\2 f'\1>1 
-<c\5 e\4 g\3 c'\2 e'\1>1 
-<g,\6 b,\5 d\4 g\3 b\2 f'\1>1 
-<c\5 e\4 g\3 c'\2 e'\1>1 
+<b,\6 fs\5>4 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 
+<ds\5 as\4>4 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 
+<e\5 b\4>4 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 
+<b,\6 fs\5>4 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 
+<e\5 b\4>4 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 
+<b,\6 fs\5>4 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 
+<fs\5 cs'\4>4 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 
+<gs\5 ds'\4>4 <gs\5 ds'\4>8 <gs\5 ds'\4>8 <gs\5 ds'\4>8 <gs\5 ds'\4>8 <gs\5 ds'\4>8 <gs\5 ds'\4>8 
+<b,\6 fs\5>4 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 
+<ds\5 as\4>4 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 
+<e\5 b\4>4 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 
+<b,\6 fs\5>4 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 
+<e\5 b\4>4 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 
+<b,\6 fs\5>4 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 
+<fs\5 cs'\4>4 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 
+<gs\5 ds'\4>4 r4 r2 
+<fs\5 cs'\4>2 r2 
+<b,\6 fs\5>4 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 
+<ds\5 as\4>4 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 
+<e\5 b\4>4 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 
+<b,\6 fs\5>4 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 
+<e\5 b\4>4 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 
+<b,\6 fs\5>4 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 
+<fs\5 cs'\4>4 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 
+<gs\5 ds'\4>4 <gs\5 ds'\4>8 <gs\5 ds'\4>8 <gs\5 ds'\4>8 <gs\5 ds'\4>8 <gs\5 ds'\4>8 <gs\5 ds'\4>8 
+<b,\6 fs\5>4 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 
+<ds\5 as\4>4 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 
+<e\5 b\4>4 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 
+<b,\6 fs\5>4 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 
+<e\5 b\4>4 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 
+<b,\6 fs\5>4 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 
+<fs\5 cs'\4>4 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 
+<gs\5 ds'\4>4 <gs\5 ds'\4>8 <gs\5 ds'\4>8 <gs\5 ds'\4>8 <gs\5 ds'\4>8 <gs\5 ds'\4>8 <gs\5 ds'\4>8 
+<ds\5 as\4>4 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 
+<e\5 b\4>4 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 
+<fs\5 cs'\4>4 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 
+<gs\5 ds'\4>4 <gs\5 ds'\4>8 <gs\5 ds'\4>8 <gs\5 ds'\4>8 <gs\5 ds'\4>8 <gs\5 ds'\4>8 <gs\5 ds'\4>8 
+<ds\5 as\4>4 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 
+<e\5 b\4>4 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 
+<fs\5 cs'\4>4 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 
+<b,\6 fs\5>4 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>4 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 
+<fs\5 cs'\4>4 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>4 r4 r2 
+<e\5 b\4>4 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 
+<fs\5 cs'\4>4 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 
+<gs\5 ds'\4>4 <gs\5 ds'\4>8 <gs\5 ds'\4>8 <gs\5 ds'\4>8 <gs\5 ds'\4>8 <gs\5 ds'\4>8 <gs\5 ds'\4>8 
+<ds\5 as\4>4 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 
+<e\5 b\4>4 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 
+<b,\6 fs\5>4 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 
+<fs\5 cs'\4>4 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 
+<b,\6 fs\5>4 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 
+<e\5 b\4>4 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 
+<fs\5 cs'\4>4 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 
+<gs\5 ds'\4>4 <gs\5 ds'\4>8 <gs\5 ds'\4>8 <gs\5 ds'\4>8 <gs\5 ds'\4>8 <gs\5 ds'\4>8 <gs\5 ds'\4>8 
+<ds\5 as\4>4 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 
+<e\5 b\4>4 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 
+<b,\6 fs\5>4 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 
+<fs\5 cs'\4>4 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 
+<b,\6 fs\5>4 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 <b,\6 fs\5>8 
+<e\5 b\4>4 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 
+<fs\5 cs'\4>4 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 
+<gs\5 ds'\4>4 <gs\5 ds'\4>8 <gs\5 ds'\4>8 <gs\5 ds'\4>8 <gs\5 ds'\4>8 <gs\5 ds'\4>8 <gs\5 ds'\4>8 
+<ds\5 as\4>4 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 
+<e\5 b\4>4 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 
+<fs\5 cs'\4>4 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 
+<gs\5 ds'\4>4 <gs\5 ds'\4>8 <gs\5 ds'\4>8 <gs\5 ds'\4>8 <gs\5 ds'\4>8 <gs\5 ds'\4>8 <gs\5 ds'\4>8 
+<ds\5 as\4>4 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 
+<e\5 b\4>4 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 
+<fs\5 cs'\4>4 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 <fs\5 cs'\4>8 
+<gs\5 ds'\4>4 <gs\5 ds'\4>8 <gs\5 ds'\4>8 <gs\5 ds'\4>8 <gs\5 ds'\4>8 <gs\5 ds'\4>8 <gs\5 ds'\4>8 
+<ds\5 as\4>4 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 <ds\5 as\4>8 
+<e\5 b\4>4 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 <e\5 b\4>8 
+<fs\5 cs'\4>4 r4 r2 
+<b,\6 fs\5 b\4 ds'\3 fs'\2 b'\1>1 
+<ds\5 as\4 ds'\3 fs'\2 as'\1>1 
+<e\5 b\4 e'\3 gs'\2 b'\1>1 
+<b,\6 fs\5 b\4 ds'\3 fs'\2 b'\1>1 
+<e\5 b\4 e'\3 gs'\2 b'\1>1 
+<b,\6 fs\5 b\4 ds'\3 fs'\2 b'\1>1 
+<fs\5 cs'\4 fs'\3 as'\2 cs''\1>1 
+<gs\5 ds'\4 gs'\3 b'\2 ds''\1>1 
+<b,\6 fs\5 b\4 ds'\3 fs'\2 b'\1>1 
+<ds\5 as\4 ds'\3 fs'\2 as'\1>1 
+<e\5 b\4 e'\3 gs'\2 b'\1>1 
+<b,\6 fs\5 b\4 ds'\3 fs'\2 b'\1>1 
+<e\5 b\4 e'\3 gs'\2 b'\1>1 
+<b,\6 fs\5 b\4 ds'\3 fs'\2 b'\1>1 
+<fs\5 cs'\4 fs'\3 as'\2 cs''\1>1 
+<gs\5 ds'\4 gs'\3 b'\2 ds''\1>1 
+<b,\6 fs\5 b\4 ds'\3 fs'\2 b'\1>1 
+<ds\5 as\4 ds'\3 fs'\2 as'\1>1 
+<e\5 b\4 e'\3 gs'\2 b'\1>1 
+<b,\6 fs\5 b\4 ds'\3 fs'\2 b'\1>1 
+<e\5 b\4 e'\3 gs'\2 b'\1>1 
+<b,\6 fs\5 b\4 ds'\3 fs'\2 b'\1>1 
+<fs\5 cs'\4 fs'\3 as'\2 cs''\1>1 
+<gs\5 ds'\4 gs'\3 b'\2 ds''\1>1 
+<ds\5 as\4 ds'\3 fs'\2 as'\1>1 
+<e\5 b\4 e'\3 gs'\2 b'\1>1 
+<fs\5 cs'\4 fs'\3 as'\2 cs''\1>1 
+<gs\5 ds'\4 gs'\3 b'\2 ds''\1>1 
+<ds\5 as\4 ds'\3 fs'\2 as'\1>1 
+<e\5 b\4 e'\3 gs'\2 b'\1>1 
+<fs\5 cs'\4 fs'\3 as'\2 cs''\1>1 
+<b,\6 fs\5 b\4 ds'\3 fs'\2 b'\1>1 
+<fs\5 cs'\4 fs'\3 as'\2 cs''\1>1 
+<b,\6 fs\5 b\4 ds'\3 fs'\2 b'\1>1 
+<fs\5 cs'\4 fs'\3 as'\2 cs''\1>1 
+<b,\6 fs\5 b\4 ds'\3 fs'\2 b'\1>1 
+<fs\5 cs'\4 fs'\3 as'\2 cs''\1>1 
+<e\5 b\4 e'\3 gs'\2 b'\1>1 
+<fs\5 cs'\4 fs'\3 as'\2 cs''\1>1 
+<gs\5 ds'\4 gs'\3 b'\2 ds''\1>1 
+<ds\5 as\4 ds'\3 fs'\2 as'\1>1 
+<e\5 b\4 e'\3 gs'\2 b'\1>1 
+<b,\6 fs\5 b\4 ds'\3 fs'\2 b'\1>1 
+<fs\5 cs'\4 fs'\3 as'\2 cs''\1>1 
+<b,\6 fs\5 b\4 ds'\3 fs'\2 b'\1>1 
+<e\5 b\4 e'\3 gs'\2 b'\1>1 
+<fs\5 cs'\4 fs'\3 as'\2 cs''\1>1 
+<gs\5 ds'\4 gs'\3 b'\2 ds''\1>1 
+<ds\5 as\4 ds'\3 fs'\2 as'\1>1 
+<e\5 b\4 e'\3 gs'\2 b'\1>1 
+<b,\6 fs\5 b\4 ds'\3 fs'\2 b'\1>1 
+<fs\5 cs'\4 fs'\3 as'\2 cs''\1>1 
+<b,\6 fs\5 b\4 ds'\3 fs'\2 b'\1>1 
+<e\5 b\4 e'\3 gs'\2 b'\1>1 
+<fs\5 cs'\4 fs'\3 as'\2 cs''\1>1 
+<gs\5 ds'\4 gs'\3 b'\2 ds''\1>1 
+<ds\5 as\4 ds'\3 fs'\2 as'\1>1 
+<e\5 b\4 e'\3 gs'\2 b'\1>1 
+<fs\5 cs'\4 fs'\3 as'\2 cs''\1>1 
+<gs\5 ds'\4 gs'\3 b'\2 ds''\1>1 
+<ds\5 as\4 ds'\3 fs'\2 as'\1>1 
+<e\5 b\4 e'\3 gs'\2 b'\1>1 
+<fs\5 cs'\4 fs'\3 as'\2 cs''\1>1 
+<gs\5 ds'\4 gs'\3 b'\2 ds''\1>1 
+<ds\5 as\4 ds'\3 fs'\2 as'\1>1 
+<e\5 b\4 e'\3 gs'\2 b'\1>1 
+<fs\5 cs'\4 fs'\3 as'\2 cs''\1>1 
+<b,\6 fs\5 b\4 ds'\3 fs'\2 b'\1>1 
+<e\5 b\4 e'\3 gs'\2 b'\1>1 
+<b,\6 fs\5 b\4 ds'\3 fs'\2 b'\1>1 
+<e\5 b\4 e'\3 gs'\2 b'\1>1 
+<b,\6 fs\5 b\4 ds'\3 fs'\2 b'\1>1 
+<e\5 b\4 e'\3 gs'\2 b'\1>1 
+<fs\5 cs'\4 fs'\3 as'\2 cs''\1>1 
+<gs\5 ds'\4 gs'\3 b'\2 ds''\1>1 
+<ds\5 as\4 ds'\3 fs'\2 as'\1>1 
+<e\5 b\4 e'\3 gs'\2 b'\1>1 
+<b,\6 fs\5 b\4 ds'\3 fs'\2 b'\1>1 
+<fs\5 cs'\4 fs'\3 as'\2 cs''\1>1 
+<e\5 b\4 e'\3 gs'\2 b'\1>1 
+<fs\5 cs'\4 fs'\3 as'\2 cs''\1>1 
+<gs\5 ds'\4 gs'\3 b'\2 ds''\1>1 
+<ds\5 as\4 ds'\3 fs'\2 as'\1>1 
+<e\5 b\4 e'\3 gs'\2 b'\1>1 
+<b,\6 fs\5 b\4 ds'\3 fs'\2 b'\1>1 
+<fs\5 cs'\4 fs'\3 as'\2 cs''\1>1 
+<b,\6 fs\5 b\4 ds'\3 fs'\2 b'\1>1 
+<e\5 b\4 e'\3 gs'\2 b'\1>1 
+<fs\5 cs'\4 fs'\3 as'\2 cs''\1>1 
+<gs\5 ds'\4 gs'\3 b'\2 ds''\1>1 
+<ds\5 as\4 ds'\3 fs'\2 as'\1>1 
+<e\5 b\4 e'\3 gs'\2 b'\1>1 
+<b,\6 fs\5 b\4 ds'\3 fs'\2 b'\1>1 
+<fs\5 cs'\4 fs'\3 as'\2 cs''\1>1 
+<b,\6 fs\5 b\4 ds'\3 fs'\2 b'\1>1 
+<e\5 b\4 e'\3 gs'\2 b'\1>1 
+<fs\5 cs'\4 fs'\3 as'\2 cs''\1>1 
+<gs\5 ds'\4 gs'\3 b'\2 ds''\1>1 
+<ds\5 as\4 ds'\3 fs'\2 as'\1>1 
+<e\5 b\4 e'\3 gs'\2 b'\1>1 
+<b,\6 fs\5 b\4 ds'\3 fs'\2 b'\1>1 
+<fs\5 cs'\4 fs'\3 as'\2 cs''\1>1 
+<b,\6 fs\5 b\4 ds'\3 fs'\2 b'\1>1 
+<e\5 b\4 e'\3 gs'\2 b'\1>1 
+<fs\5 cs'\4 fs'\3 as'\2 cs''\1>1 
+<gs\5 ds'\4 gs'\3 b'\2 ds''\1>1 
+<ds\5 as\4 ds'\3 fs'\2 as'\1>1 
+<e\5 b\4 e'\3 gs'\2 b'\1>1 
+<b,\6 fs\5 b\4 ds'\3 fs'\2 b'\1>1 
+<fs\5 cs'\4 fs'\3 as'\2 cs''\1>1 
+<b,\6 fs\5 b\4 ds'\3 fs'\2 b'\1>1 
+<e\5 b\4 e'\3 gs'\2 b'\1>1 
+<fs\5 cs'\4 fs'\3 as'\2 cs''\1>1 
+<gs\5 ds'\4 gs'\3 b'\2 ds''\1>1 
+<ds\5 as\4 ds'\3 fs'\2 as'\1>1 
+<e\5 b\4 e'\3 gs'\2 b'\1>1 
+<fs\5 cs'\4 fs'\3 as'\2 cs''\1>1 
+<gs\5 ds'\4 gs'\3 b'\2 ds''\1>1 
+<ds\5 as\4 ds'\3 fs'\2 as'\1>1 
+<e\5 b\4 e'\3 gs'\2 b'\1>1 
+<fs\5 cs'\4 fs'\3 as'\2 cs''\1>1 
+<gs\5 ds'\4 gs'\3 b'\2 ds''\1>1 
+<ds\5 as\4 ds'\3 fs'\2 as'\1>1 
+<e\5 b\4 e'\3 gs'\2 b'\1>1 
+<fs\5 cs'\4 fs'\3 as'\2 cs''\1>1 
+<b,\6 fs\5 b\4 ds'\3 fs'\2 b'\1>1 
 
 }
 
@@ -74,7 +261,7 @@ guitar = {
 
     % ギターダイアグラム表示
     \context FretBoards = "2" {
-	\chord
+	% \chord
     }
     
     %%ギター
