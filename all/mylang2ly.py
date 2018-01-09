@@ -7,6 +7,7 @@ output_gt = ""                  # .lyに書き込むギター部分の初期化
 output_chord = ""
 output_lyrics = ""
 chord_all = []
+chord_process_gl = []
 
 def chord_select(chord_name):
     for chord in data.chords:
@@ -18,22 +19,28 @@ def guitar_create(chord_name,chord_lyrics,chord_process):
     global output_gt
     global output_chord
     global output_lyrics
+    global chord_process_gl
     output_length = ""          # フレーズの長さを記録
     all_lengths = []            # コード全体の長さ
     chord_tones = chord_select(chord_name)
     chord_tone = chord_tones["1"]
     rhythm_flag = 0
-    if chord_process[0] == "\n":     # 入力がなければコードトーンの全音符をoutput_gtに
-        output_gt += "<{0}>1 ".format(chord_tone)
-        all_lengths.append("1")
+    if chord_process[0] == "\n":     # 入力がなければコードトーンの全音符をoutput_gtに，または前回の引き継ぎ
+        if chord_process_gl == [] or chord_process_gl[0] == "\n":
+            output_gt += "<{0}>1 ".format(chord_tone)
+            all_lengths.append("1")
+        else:
+            chord_process = chord_process_gl
+    chord_process_gl = chord_process
+    # chord_processを順に処理する
     for process_type in chord_process:
         if rhythm_flag == 1:
             if process_type[0] == "s":
                 chord_tone_s = chord_tone.split()
                 if process_type.count("("): # 弦指定が()で入力か宣言されているものから使うか
-                    assign_string = process_type.strip("strings()\n").split()
+                    assign_string = process_type.replace("s(","").replace(")","").replace("string(","").replace("strings(","").split()
                 else:
-                    assign_strings = data.strings[process_type[1:].strip("strings\n")]
+                    assign_strings = data.strings[process_type[1:].replace("s(","").replace(")","").replace("string(","").replace("strings(","")]
                     assign_string = assign_strings.split() # 弦指定を分割してassign_stringに入れる 要素数はリズムと同じ
                 if len(lengths) != len(assign_string): # エラー処理　もしリズムと弦指定の要素数が合わなければ終了
                     print("リズムと弦指定の数が異なるためプログラムを終了します")
@@ -80,7 +87,7 @@ def guitar_create(chord_name,chord_lyrics,chord_process):
         elif process_type[0] == "r": # リズムの場合
             rhythm_flag = 1
             if process_type.count("("):
-                chord_rhythm = process_type.strip("rhythms()\n")
+                chord_rhythm = process_type.replace("r(","").replace(")","").replace("rhythms(","").replace("\n","").replace("rhythm(","")
                 lengths = chord_rhythm.split()  # リズムを分割してlengthsに入れる
                 all_lengths += lengths
             else:
@@ -93,6 +100,7 @@ def guitar_create(chord_name,chord_lyrics,chord_process):
                         output_gt += "r{0} ".format(length[1])
                     else:
                         output_gt += "<{0}>{1} ".format(chord_tone, length)
+
     ## output_gtからコード全体の長さを計算する
     # 長さすべてを含むリストの作成
     output_list = output_length.split(" ")
@@ -118,6 +126,7 @@ def guitar_create(chord_name,chord_lyrics,chord_process):
             length_2 += 1
         elif all_length == "1":
             length_1 += 1
+      
     # print(length_1,length_2,length_4,length_8,length_16)
     length_8 += int(length_16 / 2)
     length_16 %= 2
@@ -174,8 +183,8 @@ def guitar_create(chord_name,chord_lyrics,chord_process):
     elif all_length[4] == 1:
         core_length = "16"
         length_16 = 0
-    # else:                       # いずれ消す
-    #     core_length = "1"
+    else:
+        core_length = "1"
 
     # コードと歌詞表示の長さの代入 (chord)core_length N.C.余りの長さ　と　(歌詞)core_length 全角スペース余りの長さを作る
     # コードを.lyで読める記述に変換する
