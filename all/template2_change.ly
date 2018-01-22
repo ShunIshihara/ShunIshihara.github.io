@@ -19,7 +19,7 @@ vocal =  \relative c' {
 
 %% 歌詞
 lyric = \lyricmode {
-広い宇宙2 の数2 の数1 の数1 
+広い宇宙1 　2 　2 　2 　2 
 }
 
 \storePredefinedDiagram #default-fret-table
@@ -33,17 +33,18 @@ lyric = \lyricmode {
 
 %% コードとダイアグラム用
 chord = \chordmode {
-b2 ds2:m ds1:m ds1:m 
+b1 c2 c2 c2 c2 
 }
 
 %% ギター(コードを表示したい音符に^""でできる)
 guitar = {
 \key b \major
   \time 4/4
-<b,\6 fs\5 b\4 ds'\3 fs'\2 b'\1>8 <b,\6 fs\5 b\4 ds'\3 fs'\2 b'\1>8 <b,\6 fs\5 b\4 ds'\3 fs'\2 b'\1>8 <b,\6 fs\5 b\4 ds'\3 fs'\2 b'\1>8 
-<ds\5 as\4 ds'\3 fs'\2 as'\1>8 <ds\5 as\4 ds'\3 fs'\2 as'\1>8 <ds\5 as\4 ds'\3 fs'\2 as'\1>8 <ds\5 as\4 ds'\3 fs'\2 as'\1>8 
-<ds\5 as\4 ds'\3 fs'\2 as'\1>4 <ds\5 as\4 ds'\3 fs'\2 as'\1>4 <ds\5 as\4 ds'\3 fs'\2 as'\1>4 <ds\5 as\4 ds'\3 fs'\2 as'\1>4 
-<ds\5 as\4 ds'\3 fs'\2 as'\1>4 <ds\5 as\4 ds'\3 fs'\2 as'\1>4 <ds\5 as\4 ds'\3 fs'\2 as'\1>4 <ds\5 as\4 ds'\3 fs'\2 as'\1>4 
+<b,\6 fs\5>4 <b,\6 fs\5>4 <b,\6 fs\5>4 <b,\6 fs\5>4 
+<c\5 e\4>8 <c\5 e\4>8 <c\5 e\4>8 <c\5 e\4>8 
+<c\5 e\4 g\3>8 <c\5 e\4 g\3>8 <c\5 e\4 g\3>8 <c\5 e\4 g\3>8 
+<c\5 e\4 g\3>8 <c\5 e\4 g\3>8 <c\5 e\4 g\3>8 <c\5 e\4 g\3>8 
+<c\5 e\4 g\3>8 <c\5 e\4 g\3>8 <c\5 e\4 g\3>8 <c\5 e\4 g\3>8 
 
 }
 

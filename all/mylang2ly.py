@@ -25,16 +25,29 @@ def guitar_create(chord_name,chord_lyrics,chord_process):
     chord_tones = chord_select(chord_name)
     chord_tone = chord_tones["1"]
     rhythm_flag = 0
-    if chord_process[0] == "\n":     # 入力がなければコードトーンの全音符をoutput_gtに，または前回の引き継ぎ
+    if chord_process[0] == "\n":     # 入力がなければコードトーンの全音符をoutput_gt，または前回の引き継ぎ
         if chord_process_gl == [] or chord_process_gl[0] == "\n":
             output_gt += "<{0}>1 ".format(chord_tone)
             all_lengths.append("1")
         else:
             chord_process = chord_process_gl
+    add_chord_process = ""
+    # print("chord_process_gl:{0}".format(chord_process_gl))  
+    
+    if len(chord_process) == 1 and chord_process[0][0] == "r": # 入力がリズムのみなら前回のstringsかplay_styleを引き継ぐ
+        for chord_process_bef in chord_process_gl:
+            if chord_process_bef[0] == "s" or chord_process_bef[0] == "p":
+                add_chord_process = chord_process_bef
+        if add_chord_process != "":
+            chord_process[0] = chord_process[0].replace("\n","")
+            chord_process.append(add_chord_process)
     chord_process_gl = chord_process
+
+    print("chord_process:{0}".format(chord_process))
     # chord_processを順に処理する
     for process_type in chord_process:
-        if rhythm_flag == 1:
+        if rhythm_flag == 1:    # リズムが入力されている場合
+            ## それぞれのリズムに弦指定
             if process_type[0] == "s":
                 chord_tone_s = chord_tone.split()
                 if process_type.count("("): # 弦指定が()で入力か宣言されているものから使うか
@@ -70,6 +83,28 @@ def guitar_create(chord_name,chord_lyrics,chord_process):
                         output_gt += "r{0} ".format(length)       
                     i += 1
                 rhythm_flag = 0 # rhythm_flag内の処理が終わるので0に戻す
+            ## すべてのリズムに弦指定
+            elif process_type[0] == "p":
+                chord_tone_s = chord_tone.split()
+                if process_type.count("("): # ()指定の場合
+                    playing_style = process_type.replace("p(","").replace(")","").replace("playstyle(","").replace("play_style(","").split() # 中の数字のみ残す
+                    # ここにをplaying_styleを登録したときに呼び出すコード
+                    assign_tone = []                # コードトーン
+                    if len(playing_style[0]) != 1:
+                        mult_strings = list(playing_style[0]) # 1つのリズムの複数の弦指定を1つずつ入れるリスト
+                        mult_tones = ""
+                        for num in mult_strings:
+                            if num != mult_strings[-1]:
+                                mult_tones += "{0} ".format(chord_tone_s[int(num)-1]) # コードトーンを入れる
+                            else:
+                                mult_tones += "{0}".format(chord_tone_s[int(num)-1]) 
+                        assign_tone.append(mult_tones)
+                    else: # もし1文字なら
+                        assign_tone.append(chord_tone_s[int(playing_style[0])-1])
+                for length in lengths:          # length変数にlengthsを入れ出力
+                    output_gt += "<{0}>{1} ".format(assign_tone[0], length)                       
+                rhythm_flag = 0        
+            ## リズムだけの場合
             else:
                 for length in lengths:          # length変数にlengthsを入れ出力
                     if length.count('r'):
@@ -77,13 +112,16 @@ def guitar_create(chord_name,chord_lyrics,chord_process):
                     else:
                         output_gt += "<{0}>{1} ".format(chord_tone, length)
                 rhythm_flag = 0 # rhythm_flag内の処理が終わるので0に戻す
+        ## 押さえ方指定
         if process_type[0] == "h":
             if len(chord_tones) >= 2:
                 tone_assign = process_type.strip("h()\n")
                 chord_tone = chord_tones[tone_assign] # tonesが複数あるなら指定した番号のtoneを入れる
+        ## そのまま入力
         elif process_type[0] == "n" or process_type[0] == '"':                  # "とcdefgabを認める（場合によってはリズム(r)の後にする）
             output_gt += "{0} ".format(process_type.strip('n()"\n'))
             output_length += "{0} ".format(process_type.strip('n()"\n')) # コード全体の長さを計算するため
+        ## リズム指定
         elif process_type[0] == "r": # リズムの場合
             rhythm_flag = 1
             if process_type.count("("):
@@ -247,6 +285,26 @@ def reg_dic(dic_name,reg_dic):  # dic_nameがリズムと弦指定の場合分�
             data.rhythms.update(dict)
         if dic_name == "strings":
             data.strings.update(dict)
+
+## コード情報の分割のためのchord_process作成関数
+def make_chord_process(chord_part): # chord_partを受け取りカンマで適切に区切りchord_processesを返す
+    i = 0
+    quot_flag = 0
+    chord_pro = []
+    chord_processes = chord_part.split(",")
+    for chord_process in chord_processes:
+        if quot_flag == 1:
+            chord_link += "," + chord_process
+            if chord_process.count('"') == 1:
+                quot_flag = 0
+                chord_pro.append(chord_link)
+        elif chord_process[0] == '"' and chord_process.count('"') == 1: # はじめが"で"が1つの場合なにもしない
+            quot_flag = 1
+            chord_link = chord_process
+        else:
+            chord_pro.append(chord_process)
+        i += 1
+    return chord_pro
             
 ### main
 ## 中間言語を1行ずつ読み込む
@@ -325,7 +383,7 @@ for mylang_line in mylang_lines:
         chord_name = chord_and_lyrics[0] # コードネーム
         chord_lyrics = chord_and_lyrics[1].rstrip(")") # コードに対する歌詞
         chord_all.append(chord_part[0]) # コードをすべて入れるためのリスト
-        chord_process = chord_part[1].split(".")
+        chord_process = make_chord_process(chord_part[1])
         output_guitar = guitar_create(chord_name,chord_lyrics,chord_process) # guitar部分の作成
 print("output_lyrics:{0}".format(output_lyrics))
 print("output_chord:{0}".format(output_chord))

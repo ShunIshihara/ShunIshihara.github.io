@@ -188,7 +188,7 @@ window.onload = function() {
 	    enemy3 = [];
 	    for(var n = 0; n < 3; n++){
 	    	enemy3[n] = new Heart(550 + 16 * n, 20);
-	    }	  
+	    }
 	    
 	    
 	    var enemy_dir = 0;
@@ -327,7 +327,7 @@ window.onload = function() {
 	//ゲームオーバーシーン作成関数
         var createGameoverScene = function() {
             var scene = new Scene();                //新しいシーンを作る
-            scene.backgroundColor = 'rgba(0, 0, 0, 0.2)';      //白の半透明を重ねる
+            scene.backgroundColor = 'rgba(0, 0, 0, 0.2)';      //黒の半透明を重ねる
 	    
             var label = new Label('クリックでタイトルに戻るよ！');      //新しいラベルを作る
             label.x = 240;                            //横位置調整
@@ -354,7 +354,7 @@ window.onload = function() {
 	//ゲームクリアシーン作成関数
         var createGameclearScene = function() {
             var scene = new Scene();                // 新しいシーンを作る
-            scene.backgroundColor = 'rgba(255, 255, 255, 0.2)';      //黒の半透明を重ねる
+            scene.backgroundColor = 'rgba(255, 255, 255, 0.2)';      //白の半透明を重ねる
 	    
             var label = new Label('クリックでタイトルに戻るよ！');      //新しいラベルを作る
             label.x = 250;                            //横位置調整
@@ -428,7 +428,6 @@ var Bullet = Class.create(Sprite, {
 	    this.bx = this.x;
 	    if(type == 1) this.frame = 58;
 	    if(type == 2) this.frame = 50;
-  
 	}
 	if(dir == 2){ // 右
 	    this.x = x + 24;

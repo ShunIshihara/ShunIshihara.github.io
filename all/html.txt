@@ -72,7 +72,7 @@ googletag.enableServices();
 <!-- Include Sidr bundled CSS theme -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="js/favorite.js"></script>
-		
+	
 	<!-- to-top.cssの読み込み -->
 		<link rel="stylesheet" href="./to-top.css"/>
 		<!-- to-top.jsの読み込み -->
@@ -128,7 +128,7 @@ $(function(){
     z-index: 10000;
 }
 </style>    <!-- header -->
-    
+
 <!-- fluct ad exchange headerタグ -->
 <script type='text/javascript'>
   var googletag = googletag || {};
@@ -503,7 +503,7 @@ Criteo.DisplayAd({
       </div>
 	
 	<img src="/check.php?pagename=%E5%B0%8F%E3%81%95%E3%81%AA%E6%81%8B%E3%81%AE%E3%81%86%E3%81%9F+%2F+MONGOL800" width="1" height="1" alt="check">
-  
+      
     <!-- footer -->
     <footer></footer>
 
