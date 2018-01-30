@@ -6,10 +6,6 @@
 
 %%ヘッダー
 \header {                       
-title = "小さな恋のうた"
-subtitle = "MONGOL800"
-composer = "MONGOL800"
-arranger = "MONGOL800"
 }
 
 %% ボーカル
@@ -19,7 +15,7 @@ vocal =  \relative c' {
 
 %% 歌詞
 lyric = \lyricmode {
-広い宇宙1 　2 　2 　2 　2 
+　1 　1 　1 　1 
 }
 
 \storePredefinedDiagram #default-fret-table
@@ -33,18 +29,17 @@ lyric = \lyricmode {
 
 %% コードとダイアグラム用
 chord = \chordmode {
-b1 c2 c2 c2 c2 
+c1 f1 g1 c1 
 }
 
 %% ギター(コードを表示したい音符に^""でできる)
 guitar = {
-\key b \major
+\key c \major
   \time 4/4
-<b,\6 fs\5>4 <b,\6 fs\5>4 <b,\6 fs\5>4 <b,\6 fs\5>4 
-<c\5 e\4>8 <c\5 e\4>8 <c\5 e\4>8 <c\5 e\4>8 
-<c\5 e\4 g\3>8 <c\5 e\4 g\3>8 <c\5 e\4 g\3>8 <c\5 e\4 g\3>8 
-<c\5 e\4 g\3>8 <c\5 e\4 g\3>8 <c\5 e\4 g\3>8 <c\5 e\4 g\3>8 
-<c\5 e\4 g\3>8 <c\5 e\4 g\3>8 <c\5 e\4 g\3>8 <c\5 e\4 g\3>8 
+<c\5 g\4>8 <c\5 g\4>8 <c\5 g\4>4 <c\5 g\4>8 <c\5 g\4>8 <c\5 g\4>4 
+<f,\6 c\5 f\4 a\3 c'\2 f'\1>4 <f,\6 c\5 f\4 a\3 c'\2 f'\1>8 <f,\6 c\5 f\4 a\3 c'\2 f'\1>8 <f,\6 c\5 f\4 a\3 c'\2 f'\1>8 <f,\6 c\5 f\4 a\3 c'\2 f'\1>8 <f,\6 c\5 f\4 a\3 c'\2 f'\1>8 <f,\6 c\5 f\4 a\3 c'\2 f'\1>8 
+<d\5>8 <g\4>8 <b\3>8 <d\5>8 <g\4>8 <b\3>8 <g,\6 d\5 g\4 b\3 d'\2>4 
+<c\5 g\4 c'\3 e'\2 g'\1>1 
 
 }
 

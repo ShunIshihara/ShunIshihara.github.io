@@ -6,19 +6,11 @@
 
 %%ヘッダー
 \header {                       
-  title = "title"
-  subtitle = "artist"
-  composer = "composer:"
-  arranger = "lyrics:"
-  piece = "Capo:"
+title = "ハッピーバースデートゥーユー"
+subtitle = "童謡・唱歌・合唱"
+composer = "Mildred J.Hill & Patty S.Hill"
+arranger = "Mildred J.Hill & Patty S.Hill"
 }
-
-%% 楽譜設定
-scoredefault = {
-  \key c \major
-  % \tempo 4 = 120
-}
-
 
 %% ボーカル
 vocal =  \relative c' {
@@ -27,7 +19,7 @@ vocal =  \relative c' {
 
 %% 歌詞
 lyric = \lyricmode {
-
+ハッピーバースデートゥー1 ユー2 ハッピーバースデイトゥ1 ユー2 
 }
 
 \storePredefinedDiagram #default-fret-table
@@ -41,13 +33,18 @@ lyric = \lyricmode {
 
 %% コードとダイアグラム用
 chord = \chordmode {
-
+c1 g2 g1 c2 
 }
 
-%% ギター(コードを表示したい音符に^""でできる)
+%% ギター
 guitar = {
-  \key c \major
-  \time
+\key c \major
+  \time 3/4
+<c\5 e\4 g\3 c'\2 e'\1>4 <c\5 e\4 g\3 c'\2 e'\1>4 <c\5 e\4 g\3 c'\2 e'\1>4 <c\5 e\4 g\3 c'\2 e'\1>4 
+<g,\6 b,\5 d\4 g\3 b\2 g'\1>2 
+<g,\6 b,\5 d\4 g\3 b\2 g'\1>4 <g,\6 b,\5 d\4 g\3 b\2 g'\1>4 <g,\6 b,\5 d\4 g\3 b\2 g'\1>4 <g,\6 b,\5 d\4 g\3 b\2 g'\1>4 
+<c\5 e\4 g\3 c'\2 e'\1>2 
+
 }
 
 %% 楽譜全体
@@ -70,7 +67,7 @@ guitar = {
 
     % ギターダイアグラム表示
     \context FretBoards = "2" {
-	\chord
+	% \chord
     }
     
     %%ギター
@@ -85,9 +82,7 @@ guitar = {
     >>
 
     \context Lyrics = "5" {
-      \lyricmode{
-
-      }
+      \lyric
     }
     
   >>

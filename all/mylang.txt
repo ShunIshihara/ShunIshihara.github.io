@@ -1,10 +1,5 @@
-title:小さな恋のうた
-artist:MONGOL800
-composer:MONGOL800
-lyrics:上江洌清作
-key:b
-B(広い宇宙):r(4 4 4 4),p(12)
-C():r(8 8 8 8)
-C():r(8 8 8 8),p(123)
-C():r(8 8 8 8)
-C():
+key:c
+C():rhythm(8 8 4 8 8 4),play_style(12)
+F():rhythm(4 8 8 8 8 8 8)
+G():rhythm(8 8 8 8 8 8 4),strings(2 3 4 2 3 4 12345)
+C():rhythm(1)
